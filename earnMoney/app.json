@@ -1,13 +1,54 @@
 {
   "pages": [
+    "pages/profile/profile",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/profile/userInfo/userInfo",
+    "pages/profile/userInfo_modify/userInfo_modify",
+    "pages/profile/about/about",
+    "pages/home/home",
+    "pages/publish/publish",
+    "pages/questionnaire/questionnaire"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "earnMoney",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/res/images/icon_home_line.png",
+        "selectedIconPath": "/res/images/icon_home_fill.png",
+        "selectedColor": "#09BB07"
+      },
+      {
+        "pagePath": "pages/questionnaire/questionnaire",
+        "text": "问卷",
+        "color": "#ddd",
+        "selectedColor": "#09BB07",
+        "iconPath": "/res/images/icon_booklist_line.png",
+        "selectedIconPath": "/res/images/icon_booklist_fill.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "color": "#ddd",
+        "selectedColor": "#09BB07",
+        "iconPath": "/res/images/icon_cart.png",
+        "selectedIconPath": "/res/images/icon_cart_fill.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/res/images/icon_cart_line.png",
+        "selectedIconPath": "/res/images/icon_cart_fill.png",
+        "selectedColor": "#09BB07"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
