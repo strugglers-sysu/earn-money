@@ -12,9 +12,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "earnMoney",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [
@@ -38,7 +38,7 @@
         "text": "发布",
         "color": "#ddd",
         "selectedColor": "#09BB07",
-        "iconPath": "/res/images/icon_cart_line.png",
+        "iconPath": "/res/images/icon_cart_fill.png",
         "selectedIconPath": "/res/images/icon_cart_fill.png"
       },
       {
