@@ -1,0 +1,20 @@
+<!--pages/profile/userInfo/userInfo.wxml-->
+<view class='weui-cells'>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>姓名</view>
+    <view class='we-ui__fd'>{{userInfo.name}}</view>
+  </view><view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>邮箱</view>
+    <view class='we-ui__fd'>{{userInfo.email}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>学校</view>
+    <view class='we-ui__fd'>{{userInfo.school}}</view>
+  </view>
+</view>
+
+<view wx:if="{{userInfo.status === 0 || userInfo.status === 2}}" class="weui-btn-area">
+  <navigator url="/pages/profile/userInfo_modify/userInfo_modify">
+    <button class="weui-btn" type="primary">修改个人信息</button>
+  </navigator>
+</view>
