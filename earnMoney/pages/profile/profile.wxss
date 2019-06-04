@@ -20,8 +20,3 @@
 .user-info__name {
   margin-bottom: 12rpx;
 }
-
-.font-gray {
-  color: #888;
-  font-size: 28rpx;
-}

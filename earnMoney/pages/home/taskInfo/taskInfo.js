@@ -1,20 +1,11 @@
-// pages/home/home.js
+// pages/home/taskInfo/taskInfo.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    taskList: [
-      {
-        // name: 'first',
-        theme: 'who you are?'
-      },
-      {
-        // name: 'second',
-        theme: 'where are you come from?'
-      }
-    ]
+
   },
 
   /**
