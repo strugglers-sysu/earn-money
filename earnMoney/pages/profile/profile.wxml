@@ -17,11 +17,21 @@
 </view>
 
 <view class='weui-cells'>
+  <navigator url='/pages/profile/money/money' class='weui-cell weui-cell_access' hover-class='weui-cell_active'>
+    <view class='weui-cell__hd'>
+      <image src='/res/images/icon_deposit.png' class="icon"></image>
+    </view>
+    <view class='weui-cell__bd'> 我的零钱</view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </navigator>
+</view>
+
+<view class='weui-cells'>
   <view class='weui-cell weui-cell_access' hover-class='weui-cell_active'>
     <view class='weui-cell__hd'>
       <image src='/res/images/icon_time.png' class="icon"></image>
     </view>
-    <view class='weui-cell__bd'>任务历史</view>
+    <view class='weui-cell__bd'> 任务历史</view>
     <view class='weui-cell__ft weui-cell__ft_in-access'></view>
   </view>
 </view>
@@ -31,7 +41,7 @@
     <view class='weui-cell__hd'>
       <image src='/res/images/icon_info.png' class="icon"></image>
     </view>
-    <view class='weui-cell__bd'>关于</view>
+    <view class='weui-cell__bd'> 关于</view>
     <view class='weui-cell__ft weui-cell__ft_in-access'></view>
   </navigator>
 </view>

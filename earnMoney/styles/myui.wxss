@@ -1,0 +1,9 @@
+.myui--active {
+  background-color: #ECECEC !important; 
+}
+
+/* color */
+.font-gray {
+  color: #888;
+  font-size: 28rpx;
+}

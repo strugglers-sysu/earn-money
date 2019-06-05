@@ -1,20 +1,12 @@
-// pages/home/home.js
+// pages/profile/about/about.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    taskList: [
-      {
-        // name: 'first',
-        theme: 'who you are?'
-      },
-      {
-        // name: 'second',
-        theme: 'where are you come from?'
-      }
-    ]
+    activeIndex: 0,//默认选中第一个
+    numArray: [10, 20, 30, 50, 100, 200, 300, 500, 1000]
   },
 
   /**
@@ -71,5 +63,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  activethis: function (event) {//点击选中事件
+    var thisindex = event.currentTarget.dataset.thisindex;//当前index
+    this.setData({
+      activeIndex: thisindex
+    })
   }
 })
