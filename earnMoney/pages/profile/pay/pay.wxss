@@ -1,0 +1,61 @@
+/* pages/recharge/recharge.wxss */
+.main{
+  padding: 20px;
+}
+text{
+  font-size: 12px;
+  color: gray;
+  display: block;
+  margin: 20px auto;
+}
+.itemBox{
+  flex-flow: wrap;
+}
+.itemBox view{
+  width: 33.3%;
+  box-sizing: border-box;
+}
+.itemBox view>div{
+  text-align: center;
+  padding: 20px;
+  margin:5px;
+  border-radius: 8px;
+  background: gray;
+  border: 2px solid white;
+  color: white;
+  font-size: 15px;
+}
+.itemBox view.active>div{
+  background: #ddf0ff;
+  border: 2px solid #5cbcfe;
+  color: #2c98ef;
+}
+.bg-gray {
+	background-color: white;
+}
+
+view{
+	font-size: 14px;
+}
+
+div{
+	display: block;
+}
+
+.flex {
+	display: flex;
+	flex-flow: row inwrap;
+	justify-content: flex-start;
+	/*default value*/
+}
+
+.thisbtn{
+  display: block;
+  margin: 0 30px;
+  text-align: center;
+  background-image:linear-gradient(to right,gray,black);
+  color: white;
+  padding:15px;
+  border-radius:4px;
+  box-shadow: 0px 3px 5px gary;
+}

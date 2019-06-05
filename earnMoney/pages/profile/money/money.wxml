@@ -1,22 +1,20 @@
 <!--pages/profile/about/about.wxml-->
 <view class="logo-container">
-    <image src="/res/images/logo.jpeg"></image>
-    <view class="font-black-34">EarnMoney</view>
+    <image src="/res/images/money_avatar.jpeg"></image>
+    <view class="font-black-34">账户</view>
 </view>
 <view class="weui-cells">
     <view class="weui-cell">
-        <view class="weui-cell__bd">GitHub</view>
-        <view class="weui-cell__ft">earn-money</view>
+        <view class="weui-cell__bd">钱包</view>
+        <view class="weui-cell__ft">100</view>
     </view>
     <view class="weui-cell">
-        <view class="weui-cell__bd">开发者</view>
-        <view class="weui-cell__ft">Us</view>
-    </view>
-    <view class="weui-cell">
-        <view class="weui-cell__bd">联系方式</view>
-        <view class="weui-cell__ft color-blue">7777777@qq.com</view>
+      <navigator url='/pages/profile/pay/pay' hover-class="navigator-hover">
+        <view class="weui-cell__bd">充值</view>
+      </navigator>
     </view>
 </view>
+
 <view class="weui-msg__extra-area">
     <view class="weui-footer">
         <view class="weui-footer__links">
@@ -25,3 +23,5 @@
         <view class="weui-footer__text">Copyright © 2019-2020 Imageslr</view>
     </view>
 </view>
+
+
