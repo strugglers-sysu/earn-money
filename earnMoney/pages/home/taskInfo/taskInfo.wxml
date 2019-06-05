@@ -1,2 +1,21 @@
 <!--pages/home/taskInfo/taskInfo.wxml-->
 <text>pages/home/taskInfo/taskInfo.wxml</text>
+
+<template name="question-unit">
+
+  <view wx:for="{{task.questionList}}" wx:key="{{item.id}}">
+  
+  </view>
+  <view class="questionShow">书单</view>
+
+  </view>
+  <view>
+    <text> {{index}}: {{msg}} </text>
+    <text> Time: {{time}} </text>
+    <input></input>
+  </view>
+</template>
+
+<view wx:for="{{task.questionList}}" wx:key="{{task.questionList.item.id}}">
+  <template is="question-unit" data="{{...task}}"/>
+</view>

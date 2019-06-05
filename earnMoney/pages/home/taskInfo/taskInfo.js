@@ -5,14 +5,54 @@ Page({
    * Page initial data
    */
   data: {
+    task: {
+      id: 1,
+      publisher: 'WJH',
+      time: '2019-05-23',
+      title: 'Game in your life',
+      number: 10,
+      remainingNumber: 5,
+      money: 10,
+      Fillers: [
 
+      ],
+      questionList: [
+        {
+          id: 1,
+          type: 0,
+          question: 'What games do you play',
+          answer: ''
+        },
+        {
+          id: 2,
+          type: 0,
+          question: 'How much time do you play games every week',
+          answer: ''
+        },
+        {
+          id: 3,
+          type: 1,
+          question: 'How much time do you play games every week',
+          optionalAnswers: [
+            'a day',
+            'one hour',
+            'two hour',
+            'three minutes'
+          ],
+          answer: ''
+        }
+      ]
+    }
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'options.id',
+    })
+    // console.log(options.id)
   },
 
   /**

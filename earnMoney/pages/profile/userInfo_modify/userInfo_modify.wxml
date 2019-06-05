@@ -1,27 +1,33 @@
 <!--pages/profile/userInfo_modify/userInfo_modify.wxml-->
 <view class='weui-cells'>
-  <view class="weui-cell weui-cell_input">
-    <view class="weui-cell__hd">
-      <view class="weui-label">姓名</view>
-    </view>
-    <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="name" bindinput="onInput" data-label="name" value="{{userInfo.name}}" />
-    </view>
-  </view>
-  <view class="weui-cell weui-cell_input">
-    <view class="weui-cell__hd">
-      <view class="weui-label">邮箱</view>
-    </view>
-    <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="email" bindinput="onInput" data-label="email" value="{{userInfo.email}}" />
-    </view>
-  </view>
-  <view class="weui-cell weui-cell_input">
-    <view class="weui-cell__hd">
-      <view class="weui-label">学校</view>
-    </view>
-    <view class="weui-cell__bd">
-      <input class="weui-input" placeholder="school" bindinput="onInput" data-label="school" value="{{userInfo.school}}" />
-    </view>
-  </view>
+  <form bindsubmit='setUserInfro'>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name='name' class="weui-input" placeholder="{{userInfo.name}}" bindinput="onInput" data-label="name"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name='email' class="weui-input" placeholder="{{userInfo.email}}" bindinput="onInput" data-label="email"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">学校</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name='school' class="weui-input" placeholder="{{userInfo.school}}" bindinput="onInput" data-label="school"/>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" form-type='submit' type="primary">提交</button>
+      </view>
+  </form>
 </view>
+

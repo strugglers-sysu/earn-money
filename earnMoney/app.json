@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/home/taskInfo/taskInfo",
     "pages/profile/profile",
     "pages/index/index",
     "pages/logs/logs",
@@ -8,8 +9,7 @@
     "pages/profile/userInfo_modify/userInfo_modify",
     "pages/profile/about/about",
     "pages/publish/publish",
-    "pages/questionnaire/questionnaire",
-    "pages/home/taskInfo/taskInfo"
+    "pages/questionnaire/questionnaire"
   ],
   "window": {
     "backgroundTextStyle": "light",

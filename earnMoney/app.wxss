@@ -10,3 +10,8 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
+page {
+  background-color: #F0EFF5;
+  padding-bottom: 1rpx;  /* 试图解决 load-more 底部 margin 不显示的问题 */
+}
