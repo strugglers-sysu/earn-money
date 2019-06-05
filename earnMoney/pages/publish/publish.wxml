@@ -1,2 +1,21 @@
-<!--pages/publish/publish.wxml-->
-<text>pages/publish/publish.wxml</text>
+<!--pages/empty_create/empty_create.wxml
+    空白模板创建
+-->
+<view class="empty_container">
+  <text class="common_label">问卷标题</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入项目标题'></input>
+  <text class="common_label">问题1</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <text class="common_label">问题2</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <text class="common_label">问题3</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <text class="common_label">问题4</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <text class="common_label">问题5</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <text class="common_label">问题6</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+
+<view class='thisbtn'>发布问卷</view>
+</view>
