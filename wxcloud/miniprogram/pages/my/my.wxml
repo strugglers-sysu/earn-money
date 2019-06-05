@@ -1,0 +1,17 @@
+<!--miniprogram/pages/my/my.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <text class="userinfo-nickname">{{nickName}}</text>
+    <navigator class="edit-info-button" url="../myInfo/myInfo" open-type="navigate">
+      <van-button round type='info' size="mini">编辑信息</van-button>
+    </navigator>
+  </view>
+</view>

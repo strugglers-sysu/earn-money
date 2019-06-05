@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/createTask/createTask",
+    "pages/my/my",
+    "pages/myInfo/myInfo"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "挣闲钱",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/createTask/createTask",
+        "text": "创建任务",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ],
+    "color": "#bfbfbf",
+    "selectedColor": "#1AAD19"
+  },
+  "usingComponents": {
+    "van-button": "vant/button/index",
+    "van-progress": "vant/progress/index",
+    "van-cell": "vant/cell/index",
+    "van-cell-group": "vant/cell-group/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

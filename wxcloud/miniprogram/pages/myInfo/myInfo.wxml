@@ -1,0 +1,16 @@
+<!--miniprogram/pages/myInfo/myInfo.wxml-->
+<view>
+  <view class="info-completeness">
+    
+  </view>
+  <view class="my-info">
+    <van-cell-group title="基本信息">
+      <van-cell title="学号" value="1111" />
+      <van-cell title="姓名" value="1111" />
+      <van-cell title="年龄" value="1111" />
+      <van-cell title="性别" value="1111" />
+      <van-cell title="年级" value="1111" />
+      <van-cell title="专业" value="1111" />
+    </van-cell-group>
+  </view>
+</view>
