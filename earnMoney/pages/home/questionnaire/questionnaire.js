@@ -1,11 +1,10 @@
-// pages/home/taskInfo/taskInfo.js
+// pages/home/questionnaire/questionnaire.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    loading: false,
     task: {
       id: 1,
       publisher: 'WJH',
@@ -45,19 +44,24 @@ Page({
           answer: ''
         }
       ]
-    }
+    },
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.request({
-      url: 'options.id',
-    })
-    console.log(options.id)
-    console.log('have a try')
-    // console.log(task.id)
+    // var that = this
+    // wx.getStorage({
+    //   key: 'task',
+    //   success: function (res) {
+    //     that.setData({
+    //       task: res.data
+    //     })
+    //     console.log(res.data.id)
+    //   }
+    // })
+    // console.log(options.id)
   },
 
   /**
@@ -108,25 +112,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  toQuestionaire: function(e) {
-    // var aTask = data.task
-    // wx.setStorage({
-    //   key: "task",
-    //   data: aTask
-    // })
-    // console.log('tyr too')
-    // console.log(task.id)
-
-    this.setData({
-      loading: true
-    })
-    wx.navigateTo({
-      url: '/pages/home/questionnaire/questionnaire?id=task.id',
-      // url='/pages/home/taskInfo/taskInfo?id={{item.id}}'
-    })
-    this.setData({
-      loading: false
-    })
-
+  submitQuestionnaire: function(e) {
+    e.detail.value.name
   }
 })

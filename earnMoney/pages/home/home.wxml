@@ -1,25 +1,26 @@
 <!--pages/home/home.wxml-->
 
 <view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
-    <navigator wx:for='{{taskList}}' wx:key="{{item.id}}" class="weui-cell ui-book-card taskShow" hover-class="myui--active" url='/pages/home/taskInfo/taskInfo?id={{item.id}}'>
+    <navigator wx:for='{{taskList}}' wx:key="{{item.id}}" 
+      class="weui-cell taskListShowUnit" hover-class="myui-active" url='/pages/home/taskInfo/taskInfo?id={{item.id}}'>
       <view>
         {{item.title}}
       </view>
-      <view class='font-gray'>
-        发布人：{{item.publisher}}
+      <view class='smallWord'>
+        分类: {{item.theme}}
       </view>
-      <view class='font-gray'>
-        发布时间：{{item.time}}
+      <view class='smallWord'>
+        剩余：{{item.remainingNumber}}
       </view>
-            <view class='font-gray'>
-        已填/总数：{{item.remainingNumber}}/{{item.number}}
-      </view>
-      <view class='font-gray'>
+      <view class='smallWord'>
         报酬：{{item.money}} 元
       </view>
-      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
+      <view class="weui-cell__ft_in-access weui-cell__ft"></view>
     </navigator>
 </view>
+
+<load-more status="{{loadMoreStatus}}" nomore-text="没有更多问卷了"></load-more>
+<no-data wx:if="{{isNoData}}"></no-data>
 
 
       <!-- <view class="myui-book-card__info font-gray-26">

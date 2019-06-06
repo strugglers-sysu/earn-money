@@ -1,0 +1,43 @@
+<!--pages/home/questionnaire/questionnaire.wxml-->
+
+<template name="questionShow">
+  <view class='question'>{{id}}. {{question}}</view>
+  <view class='answer' wx:if="{{type == 0}}">
+    <input name="{{id}}" placeholder="" />
+  </view>
+  <view class='answer' wx:elif="{{type == 1}}">
+    <view class="section section_gap">
+      <view class="section__title">checkbox</view>
+      <checkbox-group name="checkbox">
+        <label><checkbox value="checkbox1"/>checkbox1</label>
+        <label><checkbox value="checkbox2"/>checkbox2</label>
+      </checkbox-group>
+    </view>
+  </view>
+
+</template>
+
+<form bindsubmit='submitQuestionnaire'>
+  <view wx:for="{{task.questionList}}" wx:data-=''>
+    <template is="questionShow" data='{{...item}}'/>
+  </view>
+  <!-- <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">姓名</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name='name' class="weui-input" placeholder="{{userInfo.name}}" bindinput="onInput" data-label="name"/>
+    </view>
+  </view> -->
+
+  <view class="weui-btn-area">
+    <button class="weui-btn" form-type='reset' type="primary">重置</button>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" form-type='submit' type="primary">提交</button>
+  </view>
+  </form>
+
+
+
+
