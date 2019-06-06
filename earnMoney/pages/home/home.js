@@ -129,5 +129,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  // jumpTo: function(e) {
+  //   var index = parseInt(e.currentTarget.dataset.index);
+  //   wx.navigateTo({
+  //     url = '/pages/home/taskInfo/taskInfo?id=' + index
+  //   }); 
+  // }
 })

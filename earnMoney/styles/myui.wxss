@@ -8,3 +8,6 @@
   font-size: 28rpx;
   padding: 0.75px;
 }
+.myui-textarea {
+  height: 25px;
+}

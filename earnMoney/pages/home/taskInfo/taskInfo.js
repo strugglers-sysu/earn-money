@@ -56,15 +56,20 @@ Page({
       url: 'options.id',
     })
     console.log(options.id)
-    console.log('have a try')
-    // console.log(task.id)
+
+    // console.log('have a try')
+    // wx.setStorage({
+    //   key: "task",
+    //   data: task
+    // })
+    // console.log(task.id) why
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -109,14 +114,6 @@ Page({
 
   },
   toQuestionaire: function(e) {
-    // var aTask = data.task
-    // wx.setStorage({
-    //   key: "task",
-    //   data: aTask
-    // })
-    // console.log('tyr too')
-    // console.log(task.id)
-
     this.setData({
       loading: true
     })

@@ -2,7 +2,7 @@
 
 <view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
     <navigator wx:for='{{taskList}}' wx:key="{{item.id}}" 
-      class="weui-cell taskListShowUnit" hover-class="myui-active" url='/pages/home/taskInfo/taskInfo?id={{item.id}}'>
+      class="weui-cell taskListShowUnit" hover-class="myui-active" url='/pages/home/taskInfo/taskInfo?id=${{item.id}}'>
       <view>
         {{item.title}}
       </view>
@@ -15,7 +15,7 @@
       <view class='smallWord'>
         报酬：{{item.money}} 元
       </view>
-      <view class="weui-cell__ft_in-access weui-cell__ft"></view>
+      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
     </navigator>
 </view>
 
