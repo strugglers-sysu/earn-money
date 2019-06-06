@@ -3,19 +3,17 @@
 -->
 <view class="empty_container">
   <text class="common_label">问卷标题</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入项目标题'></input>
-  <text class="common_label">问题1</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-    <text class="common_label">问题2</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-    <text class="common_label">问题3</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-    <text class="common_label">问题4</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-    <text class="common_label">问题5</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-    <text class="common_label">问题6</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问卷标题'></input>
+  <text class="common_label">问卷描述</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题描述'></input>
+    <text class="common_label">问卷类型</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题类型'></input>
+    <text class="common_label">问题个数</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'></input>
+    <text class="common_label">面向用户</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题面向对象'></input>
+    <text class="common_label">其他补充</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入补充内容'></input>
 
-<view class='thisbtn'>发布问卷</view>
+<view class='thisbtn'>填写问卷</view>
 </view>

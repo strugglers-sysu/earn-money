@@ -44,6 +44,11 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: {
+      status: 0,
+      name: 'WJH',
+      email: '7777777@qq.com',
+      school: 'SYSU'
+    }
   }
 })

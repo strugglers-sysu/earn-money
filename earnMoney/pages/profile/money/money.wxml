@@ -8,11 +8,13 @@
         <view class="weui-cell__bd">钱包</view>
         <view class="weui-cell__ft">100</view>
     </view>
-    <view class="weui-cell">
-      <navigator url='/pages/profile/pay/pay' hover-class="navigator-hover">
-        <view class="weui-cell__bd">充值</view>
-      </navigator>
-    </view>
+</view>
+
+<view class='weui-cells'>
+  <navigator url='/pages/profile/pay/pay' class='weui-cell weui-cell_access' hover-class='weui-cell_active'>
+    <view class='weui-cell__bd'> 充值</view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </navigator>
 </view>
 
 <view class="weui-msg__extra-area">
