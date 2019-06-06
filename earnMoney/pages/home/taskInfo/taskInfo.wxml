@@ -1,2 +1,24 @@
 <!--pages/home/taskInfo/taskInfo.wxml-->
-<text>pages/home/taskInfo/taskInfo.wxml</text>
+
+<view class="showPanel smallWord" hover-class="myui--active">
+  <view class='showPanelTitle'>{{task.title}}</view>
+  <view>ID：{{task.id}}</view>
+  <view>发布人：{{task.publisher}}</view>
+  <view>发布时间：<text style='color: #00EE00;'>{{task.starttime}}</text></view>
+  <view>截止时间：<text style='color: #FF0000;'>{{task.endtime}}</text></view>
+  <view>剩余/总数：<text>{{task.remainingNumber}}</text>/<text>{{task.number}}</text></view>
+  <view>问卷长度：{{task.questionList.length}}</view>
+  <view>报酬：<text style='color: #0000FF;'>{{task.money}}</text></view>
+</view>
+
+<view class="showLabel">问卷简介</view>
+<view class="showPanel smallWord" hover-class="myui--active">
+  <view style='color: #000000'>{{task.content}}</view>
+</view>
+
+<!-- 底部链接 -->
+<view class='tip' catchtap="onShowTip">对问卷有疑问？</view>
+<!-- 底部菜单 -->
+<view class="menubar">
+  <button class='menubar__btn' loading='{{loading}}' type="primary" bindtap="toQuestionaire">填写问卷</button>
+</view>

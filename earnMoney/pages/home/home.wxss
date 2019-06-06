@@ -1,1 +1,14 @@
 /* pages/home/home.wxss */
+
+.taskListShowUnit {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;  
+  justify-content:flex-start;
+  padding: 15px; 
+  background-color: #fff;
+  position: relative;
+  /* -webkit-align-items: flex-start; */
+  /* position: relative; */
+  /* -webkit-box-align: start; */
+}

@@ -1,0 +1,38 @@
+<!--pages/home/questionnaire/questionnaire.wxml-->
+
+<template name="questionShow">
+  <view class='question'>
+    <view class='question_index'>{{id}}.</view>
+    <view class='question_item'>{{question}}</view>
+  </view>
+  <view class='answer' wx:if="{{type == 0}}">
+    <!-- <input name="{{id}}" placeholder="" /> -->
+    <view class="weui-cell__bd">
+      <textarea name='{{id}}' class="myui-textarea" placeholder="" maxlength="100"/>
+      <view class="weui-textarea-counter">{{comment.length}}/100</view>
+    </view>
+  </view>
+  <view class='answer' wx:elif="{{type == 1}}">
+    <!-- <view class="section section_gap"> -->
+      
+      <checkbox-group name="{{id}}" bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{optionalAnswers}}" >
+          <checkbox name="{{id}}" value="{{index}}" checked='{{item.isChecked}}'/>{{item.option}}
+        </label>
+      </checkbox-group>
+    <!-- </view> -->
+  </view>
+</template>
+
+<form bindsubmit='submitQuestionnaire'>
+  <view wx:for="{{task.questionList}}" wx:data-=''>
+    <template is="questionShow" data='{{...item}}'/>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" form-type='submit' type="primary">提交</button>
+  </view>
+  </form>
+
+
+
+

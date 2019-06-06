@@ -1,16 +1,27 @@
 <!--pages/home/home.wxml-->
 
-<view wx:if='{{taskList.length>0}}' class='weui-cells weui-cells_after-title'>
-    <navigator wx:for='{{taskList}}' wx:key="{{index}}" class="weui-cell ui-book-card" hover-class="myui--active"
-    url='/pages/home/taskInfo/taskInfo'>
-      <view class='weui-cell__hd'>
-        {{index}}.
-        {{item.theme}}
+<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
+    <navigator wx:for='{{taskList}}' wx:key="{{item.id}}" 
+      class="weui-cell taskListShowUnit" hover-class="myui-active" url='/pages/home/taskInfo/taskInfo?id=${{item.id}}'>
+      <view>
+        {{item.title}}
       </view>
-      <view class='weui-cell__bd'>
-        
+      <view class='smallWord'>
+        分类: {{item.theme}}
       </view>
-      <!-- <view class='taskSublist' class=''>{{item.name}}</view> -->
+      <view class='smallWord'>
+        剩余：{{item.remainingNumber}}
+      </view>
+      <view class='smallWord'>
+        报酬：{{item.money}} 元
+      </view>
+      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
+    </navigator>
+</view>
+
+<load-more status="{{loadMoreStatus}}" nomore-text="没有更多问卷了"></load-more>
+<no-data wx:if="{{isNoData}}"></no-data>
+
 
       <!-- <view class="myui-book-card__info font-gray-26">
         <view class="myui-book-card__info-title font-black-34">{{item.book.title}}</view>
@@ -28,6 +39,3 @@
           <view>还书日期：{{item.actual_return_time}}</view>
         </block>
       </view> -->
-      <view class="weui-cell__ft_in-access weui-cell__ft"></view>
-    </navigator>
-</view>

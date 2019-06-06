@@ -1,16 +1,15 @@
 // pages/profile/userInfo/userInfo.js
+
+var app = getApp();
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    userInfo: {
-      status: 0,
-      name: 'WJH',
-      email: '7777777@qq.com',
-      school: 'SYSU'
-    } // 需要后端
+    userInfo: app.globalData.userInfo,
+    fisrtOpen: true
   },
 
   /**
@@ -31,14 +30,20 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    if(!this.fisrtOpen) {
+      this.setData({
+        'userInfo.name': app.globalData.userInfo.name,
+        'userInfo.email': app.globalData.userInfo.email,
+        'userInfo.school': app.globalData.userInfo.school
+      })
+    }
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-
+    this.fisrtOpen = false
   },
 
   /**

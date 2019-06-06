@@ -50,5 +50,9 @@ App({
       email: '7777777@qq.com',
       school: 'SYSU'
     }
+<<<<<<< HEAD
   }
+=======
+  },
+>>>>>>> b1e06eb2d79bbcf482c9baae8bf5e7067516d3c0
 })

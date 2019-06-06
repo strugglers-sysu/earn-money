@@ -1,9 +1,13 @@
-.myui--active {
+.myui-active {
   background-color: #ECECEC !important; 
 }
 
 /* color */
-.font-gray {
+.smallWord {
   color: #888;
   font-size: 28rpx;
+  padding: 0.75px;
+}
+.myui-textarea {
+  height: 25px;
 }

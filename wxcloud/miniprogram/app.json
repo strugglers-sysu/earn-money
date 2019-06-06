@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/createTask/createTask",
     "pages/my/my",
-    "pages/myInfo/myInfo"
+    "pages/myInfo/myInfo",
+    "pages/editInfo/editInfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -40,7 +41,8 @@
     "van-button": "vant/button/index",
     "van-progress": "vant/progress/index",
     "van-cell": "vant/cell/index",
-    "van-cell-group": "vant/cell-group/index"
+    "van-cell-group": "vant/cell-group/index",
+    "van-field": "vant/field/index"
   },
   "sitemapLocation": "sitemap.json"
 }
