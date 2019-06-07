@@ -60,11 +60,24 @@ App({
     })
   },
   globalData: {
+<<<<<<< HEAD
     // userInfo: {
     //   status: 0,
     //   name: 'WJH',
     //   email: '7777777@qq.com',
     //   school: 'SYSU'
     // }
+=======
+    userInfo: {
+      status: 0,
+      name: 'WJH',
+      email: '7777777@qq.com',
+      school: 'SYSU'
+    }
+<<<<<<< HEAD
+  }
+=======
+>>>>>>> 434b1368ff25b743a12808a0bcc6e52abe2845c5
   },
+>>>>>>> b1e06eb2d79bbcf482c9baae8bf5e7067516d3c0
 })

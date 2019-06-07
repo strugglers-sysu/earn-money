@@ -26,9 +26,9 @@ text{
   font-size: 15px;
 }
 .itemBox view.active>div{
-  background: #ddf0ff;
-  border: 2px solid #5cbcfe;
-  color: #2c98ef;
+  background: white;
+  border: 2px solid black;
+  color: black;
 }
 .bg-gray {
 	background-color: white;

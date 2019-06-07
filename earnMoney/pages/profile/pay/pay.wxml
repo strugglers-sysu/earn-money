@@ -6,6 +6,6 @@
       <view class="{{activeIndex == index ? 'active':''}}"  wx:for="{{numArray}}" bindtap='activethis' data-thisindex='{{index}}'><div>{{item}}</div></view>
     </view>
 </view>
-<view class='thisbtn'>立即充值</view>
+<view class='thisbtn'>充值</view>
 
 </view>
