@@ -1,16 +1,15 @@
 {
   "pages": [
+    "pages/profile/profile",
+    "pages/index/index",
     "pages/home/home",
     "pages/home/questionnaire/questionnaire",
     "pages/home/taskInfo/taskInfo",
-    "pages/profile/profile",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/profile/userInfo/userInfo",
     "pages/profile/userInfo_modify/userInfo_modify",
     "pages/profile/about/about",
-    "pages/publish/publish",
-    "pages/questionnaire/questionnaire"
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,14 +25,6 @@
         "iconPath": "/res/images/icon_home_line.png",
         "selectedIconPath": "/res/images/icon_home_fill.png",
         "selectedColor": "#09BB07"
-      },
-      {
-        "pagePath": "pages/questionnaire/questionnaire",
-        "text": "问卷",
-        "color": "#ddd",
-        "selectedColor": "#09BB07",
-        "iconPath": "/res/images/icon_booklist_line.png",
-        "selectedIconPath": "/res/images/icon_booklist_fill.png"
       },
       {
         "pagePath": "pages/publish/publish",

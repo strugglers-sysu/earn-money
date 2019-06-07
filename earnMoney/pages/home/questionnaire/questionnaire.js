@@ -50,6 +50,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.showLoading({ title: '加载中', })
     // var that = this
     // wx.getStorage({
     //   key: 'task',
@@ -66,7 +67,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    wx.hideLoading()  //showLoading 只能用此语句关闭
   },
 
   /**

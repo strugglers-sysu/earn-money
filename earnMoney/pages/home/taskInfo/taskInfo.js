@@ -7,7 +7,7 @@ Page({
   data: {
     loading: false,
     task: {
-      id: 1,
+      id: 0,
       publisher: 'WJH',
       starttime: '2019-05-23',
       endtime: '2019-06-23',
@@ -53,7 +53,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'options.id',
+      // url: 'options.id',
     })
     console.log(options.id)
 

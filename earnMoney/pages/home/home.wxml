@@ -1,8 +1,8 @@
 <!--pages/home/home.wxml-->
 
 <view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
-    <navigator wx:for='{{taskList}}' wx:key="{{item.id}}" 
-      class="weui-cell taskListShowUnit" hover-class="myui-active" url='/pages/home/taskInfo/taskInfo?id=${{item.id}}'>
+    <view wx:for='{{taskList}}' wx:key="index" 
+      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
       <view>
         {{item.title}}
       </view>
@@ -16,9 +16,44 @@
         报酬：{{item.money}} 元
       </view>
       <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
-    </navigator>
+    </view>
 </view>
-
+<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
+    <view wx:for='{{taskList}}' wx:key="index" 
+      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
+      <view>
+        {{item.title}}
+      </view>
+      <view class='smallWord'>
+        分类: {{item.theme}}
+      </view>
+      <view class='smallWord'>
+        剩余：{{item.remainingNumber}}
+      </view>
+      <view class='smallWord'>
+        报酬：{{item.money}} 元
+      </view>
+      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
+    </view>
+</view>
+<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
+    <view wx:for='{{taskList}}' wx:key="index" 
+      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
+      <view>
+        {{item.title}}
+      </view>
+      <view class='smallWord'>
+        分类: {{item.theme}}
+      </view>
+      <view class='smallWord'>
+        剩余：{{item.remainingNumber}}
+      </view>
+      <view class='smallWord'>
+        报酬：{{item.money}} 元
+      </view>
+      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
+    </view>
+</view>
 <load-more status="{{loadMoreStatus}}" nomore-text="没有更多问卷了"></load-more>
 <no-data wx:if="{{isNoData}}"></no-data>
 

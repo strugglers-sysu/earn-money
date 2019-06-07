@@ -11,6 +11,15 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log("i am success")
+        if(0) {
+          wx.switchTab({
+            url: '/pages/profile/profile'
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/home/home',
+          })
+        }
       },
       complete: () => {
         console.log("i am complete")
@@ -22,8 +31,10 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log("已经授sucess权")
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          console.log("已经授权")
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
@@ -34,9 +45,14 @@ App({
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
+              console.log("get userInfo success")
+              wx.switchTab({
+                url: '/pages/home/home'
+              })
             }
           })
         }
+        console.log("没进来")
       },
       fail: () => {
         console.log("be failed")
@@ -44,11 +60,11 @@ App({
     })
   },
   globalData: {
-    userInfo: {
-      status: 0,
-      name: 'WJH',
-      email: '7777777@qq.com',
-      school: 'SYSU'
-    }
+    // userInfo: {
+    //   status: 0,
+    //   name: 'WJH',
+    //   email: '7777777@qq.com',
+    //   school: 'SYSU'
+    // }
   },
 })

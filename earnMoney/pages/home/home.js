@@ -1,4 +1,5 @@
 // pages/home/home.js
+var app = getApp()
 Page({
 
   /**
@@ -7,7 +8,7 @@ Page({
   data: {
     taskList: [
       {
-        id: 1,
+        id: 0,
         publisher: 'WJH',
         time: '2019-05-23',
         title: 'Game in your life',
@@ -46,7 +47,7 @@ Page({
         ]
       },
       {
-        id: 2,
+        id: 1,
         publisher: 'QW',
         time: '2019-05-23',
         title: 'About your Eating habits',
@@ -114,14 +115,57 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: '',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      complete: function (res) {
+        // that.setData({
+        //   moment: res.data.data
+        // });
+        console.log(that.data.moment);
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    })
   },
 
   /**
    * Called when page reach bottom
    */
   onReachBottom: function () {
-
+    var that = this;
+    // 显示加载图标
+    wx.showLoading({
+      // title: '玩命加载中',
+    })
+    // 页数+1
+    // page = page + 1;
+    wx.request({
+      url: '',
+      method: "GET",
+      // 请求头部
+      header: {
+        'content-type': 'application/text'
+      },
+      complete: function (res) {
+        // 回调函数
+        // var moment_list = that.data.moment;
+        // const oldData = that.data.moment;
+        // that.setData({
+        //   moment: oldData.concat(res.data.data)
+        // })
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
   },
 
   /**
@@ -130,10 +174,12 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // jumpTo: function(e) {
-  //   var index = parseInt(e.currentTarget.dataset.index);
-  //   wx.navigateTo({
-  //     url = '/pages/home/taskInfo/taskInfo?id=' + index
-  //   }); 
-  // }
+  naviToInfo: function(e) {
+    
+    let index = parseInt(e.currentTarget.dataset.index);
+    console.log('index', index)
+    wx.navigateTo({
+      url: '/pages/home/taskInfo/taskInfo?id=' + index
+    })
+  }
 })

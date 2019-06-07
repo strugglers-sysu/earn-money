@@ -5,16 +5,14 @@
     <view class='question_index'>{{id}}.</view>
     <view class='question_item'>{{question}}</view>
   </view>
-  <view class='answer' wx:if="{{type == 0}}">
-    <!-- <input name="{{id}}" placeholder="" /> -->
-    <view class="weui-cell__bd">
-      <textarea name='{{id}}' class="myui-textarea" placeholder="" maxlength="100"/>
-      <view class="weui-textarea-counter">{{comment.length}}/100</view>
-    </view>
+  <!-- <view wx:if="{{type == 0}}">
+    <textarea name='{{id}}' class="myui-textarea" placeholder="" maxlength="50"/>
+  </view> -->
+
+  <view class="myui-cell weui-cells weui-cells_after-title" wx:if="{{type == 0}}">
+    <textarea class="weui-textarea" name='{{id}}' placeholder="" maxlength="50" bindinput="onInput" />
   </view>
-  <view class='answer' wx:elif="{{type == 1}}">
-    <!-- <view class="section section_gap"> -->
-      
+  <view class='answer' wx:elif="{{type == 1}}">      
       <checkbox-group name="{{id}}" bindchange="checkboxChange">
         <label class="checkbox" wx:for="{{optionalAnswers}}" >
           <checkbox name="{{id}}" value="{{index}}" checked='{{item.isChecked}}'/>{{item.option}}
@@ -25,7 +23,7 @@
 </template>
 
 <form bindsubmit='submitQuestionnaire'>
-  <view wx:for="{{task.questionList}}" wx:data-=''>
+  <view wx:for="{{task.questionList}}" wx:key='id'>
     <template is="questionShow" data='{{...item}}'/>
   </view>
   <view class="weui-btn-area">
