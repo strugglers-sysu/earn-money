@@ -1,5 +1,0 @@
-/* miniprogram/pages/my/my.wxss */
-
-.edit-info-button{
-  margin-left: 100rpx;
-}
