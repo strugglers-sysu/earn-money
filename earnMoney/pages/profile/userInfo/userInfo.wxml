@@ -30,7 +30,7 @@
   </view>
 </view>
 
-<view wx:if="{{detail.type  == 'cow'}}" class='weui-cells'>
+<view wx:else class='weui-cells'>
   <view class='weui-cell'>
     <view class='we-ui__bd weui-label'>用户类型</view>
     <view class='we-ui__fd'>奶牛</view>

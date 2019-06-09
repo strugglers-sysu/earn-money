@@ -53,7 +53,7 @@
       <button class="weui-btn" form-type='submit' type="primary">提交</button>
     </view>
   </form>
-  <form wx:if="{{detail.type  == 'cow'}}" bindsubmit='setUserInfro'>
+  <form wx:else bindsubmit='setUserInfro'>
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">组织全称</view>
