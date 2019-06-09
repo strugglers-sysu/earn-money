@@ -17,6 +17,14 @@ page {
   overflow: hidden;
 }
 
+.default-avatar {
+  width: 64px; 
+  height: 64px;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
 .user-info__name {
   margin-bottom: 12rpx;
 }

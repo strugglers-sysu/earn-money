@@ -9,6 +9,19 @@ App({
       })
     }
 
+    // 调用云函数，获取openid
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        this.globalData.openid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+
     // this.globalData = {}
     // // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
@@ -69,6 +82,7 @@ App({
     // })
   },
   globalData: {
+    openid: "",
     userInfo: {
       status: 0,
       name: 'WJH',
