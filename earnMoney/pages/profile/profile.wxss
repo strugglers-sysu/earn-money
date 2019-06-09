@@ -28,3 +28,7 @@ page {
 .user-info__name {
   margin-bottom: 12rpx;
 }
+
+.logo-container {
+  text-align: center;
+}

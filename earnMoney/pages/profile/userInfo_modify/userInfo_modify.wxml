@@ -1,33 +1,70 @@
 <!--pages/profile/userInfo_modify/userInfo_modify.wxml-->
 <view class='weui-cells'>
-  <form bindsubmit='setUserInfro'>
+  <form wx:if="{{detail.type  == 'student'}}" bindsubmit='setUserInfro'>
     <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">姓名</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input name='name' class="weui-input" placeholder="{{userInfo.name}}" bindinput="onInput" data-label="name"/>
-        </view>
+      <view class="weui-cell__hd">
+        <view class="weui-label">学号</view>
       </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">邮箱</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input name='email' class="weui-input" placeholder="{{userInfo.email}}" bindinput="onInput" data-label="email"/>
-        </view>
+      <view class="weui-cell__bd">
+        <input name='sid' class="weui-input" placeholder="{{detail.sid}}" data-label="sid"/>
       </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">学校</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input name='school' class="weui-input" placeholder="{{userInfo.school}}" bindinput="onInput" data-label="school"/>
-        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">姓名</view>
       </view>
-      <view class="weui-btn-area">
-        <button class="weui-btn" form-type='submit' type="primary">提交</button>
+      <view class="weui-cell__bd">
+        <input name='name' class="weui-input" placeholder="{{detail.name}}" data-label="name"/>
       </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">年龄</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='age' class="weui-input" placeholder="{{detail.age}}" data-label="sge"/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">性别</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='gender' class="weui-input" placeholder="{{detail.gender}}" data-label="gender"/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">年级</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='grade' class="weui-input" placeholder="{{detail.grade}}" data-label="grade"/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">专业</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='pro' class="weui-input" placeholder="{{detail.pro}}" data-label="pro"/>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" form-type='submit' type="primary">提交</button>
+    </view>
+  </form>
+  <form wx:if="{{detail.type  == 'cow'}}" bindsubmit='setUserInfro'>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">组织全称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='name' class="weui-input" placeholder="{{detail.name}}" data-label="name"/>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" form-type='submit' type="primary">提交</button>
+    </view>
   </form>
 </view>
 

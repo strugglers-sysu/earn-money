@@ -1,18 +1,27 @@
 // pages/profile/about/about.js
+
+var app = getApp()
+const db = wx.cloud.database()
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    userInfo: app.globalData.userInfo,
+    detail: {
+      avatarUrl: '/res/images/money_avatar.jpeg',
+      nickName: '账户',
+      wallet: 0
+    }
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -26,7 +35,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    db.collection('users').where({
+      _openid: app.globalData.userInfo.openid
+    }).get().then(res => {
+      this.setData({
+        'detail.avatarUrl': res.data[0].avatarUrl,
+        'detail.nickName': res.data[0].nickName,
+        'detail.wallet': res.data[0].wallet,
+      })
+    })
   },
 
   /**

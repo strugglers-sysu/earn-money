@@ -1,0 +1,14 @@
+<!--earnMoney/pages/profile/pick_userType/pick_userType.wxml-->
+<view class='weui-cells'>
+  <text class="title">请选择用户类型</text>
+  <view class='weui-cell'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" bindtap="setUserType" type="primary">提交</button>
+  </view>
+</view>

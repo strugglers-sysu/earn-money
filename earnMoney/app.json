@@ -9,7 +9,10 @@
     "pages/profile/userInfo/userInfo",
     "pages/profile/userInfo_modify/userInfo_modify",
     "pages/profile/about/about",
-    "pages/publish/publish"
+    "pages/profile/money/money",
+    "pages/profile/pay/pay",
+    "pages/publish/publish",
+    "pages/profile/pick_userType/pick_userType"
   ],
   "window": {
     "backgroundTextStyle": "light",

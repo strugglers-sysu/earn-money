@@ -10,14 +10,46 @@ Page({
    * Page initial data
    */
   data: {
-    userInfo: app.globalData.userInfo    
+    userInfo: app.globalData.userInfo,
+    detail: {
+      type: '',
+      sid: '',
+      name: '',
+      age: '',
+      gender: '',
+      grade: '',
+      pro: ''
+    }
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    if (app.globalData.userInfo.type == 'student') {
+      db.collection('users').where({
+        _openid: app.globalData.userInfo.openid
+      }).get().then(res => {
+        this.setData({
+          'detail.type': res.data[0].type,
+          'detail.sid': res.data[0].sid,
+          'detail.name': res.data[0].name,
+          'detail.age': res.data[0].age,
+          'detail.gender': res.data[0].gender,
+          'detail.grade': res.data[0].grade,
+          'detail.pro': res.data[0].pro
+        })
+      })
+    }
+    else {
+      db.collection('users').where({
+        _openid: app.globalData.userInfo.openid
+      }).get().then(res => {
+        this.setData({
+          'detail.name': res.data[0].name
+        })
+      })
+    }
   },
 
   /**
@@ -31,13 +63,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      'userInfo.name': app.globalData.userInfo.name,
-      'userInfo.email': app.globalData.userInfo.email,
-      'userInfo.school': app.globalData.userInfo.school
-    })
-    // 为什么不加这一段，数据没有修改，按理说button的触发事件已经可以对数据进行修改了啊
-    // 而且加了这一段后，会显示不能被赋予未定义的值，这里涉及data实例化高得不是很明白
+
   },
 
   /**
@@ -74,32 +100,29 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   setUserInfro: function (e) {
-    if (e.detail.value.name && e.detail.value.email && e.detail.value.school) {
-      this.setData({
-        'userInfo.name': e.detail.value.name,
-        'userInfo.email': e.detail.value.email,
-        'userInfo.school': e.detail.value.school
+    if (app.globalData.userInfo.type == 'student'
+    && e.detail.value.sid 
+    && e.detail.value.name 
+    && e.detail.value.age 
+    && e.detail.value.gender 
+    && e.detail.value.grade 
+    && e.detail.value.pro) {
+      db.collection('users').doc(app.globalData.userInfo.id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          sid: e.detail.value.sid,
+          name: e.detail.value.name,
+          age: e.detail.value.age,
+          gender: e.detail.value.gender,
+          grade: e.detail.value.grade,
+          pro: e.detail.value.pro
+        }
       })
-      app.globalData.userInfo.name = e.detail.value.name
-      app.globalData.userInfo.email = e.detail.value.email
-      app.globalData.userInfo.school = e.detail.value.school
-      // wx.request({
-      //   url: '', // 需要后端
-      //   method: POST,
-      //   data: {
-      //     userInfo: '',
-      //     y: ''
-      //   },
-      //   header: {
-      //     'content-type': 'application/json' // 默认值
-      //   },
-      //   success(res) {
-      //     console.log(res.data)
-      //   }
-      // })
-      // console.log(userInfo.name) // why 会报错
-      // console.log(app.globalData.userInfo.name) // 不会报错
+      .then(console.log)
+      .catch(console.error)
+
       wx.showToast({ // 显示Toast
         title: '已修改',
         icon: 'success',
@@ -111,6 +134,29 @@ Page({
           })
         }
       }) 
+    }
+    else if (app.globalData.userInfo.type == 'cow'
+      && e.detail.value.name) {
+      db.collection('users').doc(app.globalData.userInfo.id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          name: e.detail.value.name
+        }
+      })
+      .then(console.log)
+      .catch(console.error)
+
+      wx.showToast({ // 显示Toast
+        title: '已修改',
+        icon: 'success',
+        duration: 10000,
+        mask: true,
+        success(res) {
+          wx.switchTab({
+            url: '/pages/profile/profile',
+          })
+        }
+      })
     }
     else {
       wx.showModal({

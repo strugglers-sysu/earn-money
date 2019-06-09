@@ -1,6 +1,7 @@
 // pages/profile/userInfo/userInfo.js
 
-var app = getApp();
+var app = getApp()
+const db = wx.cloud.database()
 
 Page({
 
@@ -9,14 +10,45 @@ Page({
    */
   data: {
     userInfo: app.globalData.userInfo,
-    fisrtOpen: true
+    detail: {
+      type: '',
+      sid: '',
+      name: '',
+      age: '',
+      gender: '',
+      grade: '',
+      pro: ''
+    }
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    if (app.globalData.userInfo.type == 'student') {
+      db.collection('users').where({
+        _openid: app.globalData.userInfo.openid
+      }).get().then(res => {
+        this.setData({
+          'detail.type': res.data[0].type,
+          'detail.sid': res.data[0].sid,
+          'detail.name': res.data[0].name,
+          'detail.age': res.data[0].age,
+          'detail.gender': res.data[0].gender,
+          'detail.grade': res.data[0].grade,
+          'detail.pro': res.data[0].pro
+        })
+      })
+    }
+    else {
+      db.collection('users').where({
+        _openid: app.globalData.userInfo.openid
+      }).get().then(res => {
+        this.setData({
+          'detail.name': res.data[0].name
+        })
+      })
+    }
   },
 
   /**
@@ -30,20 +62,14 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    if(!this.fisrtOpen) {
-      this.setData({
-        'userInfo.name': app.globalData.userInfo.name,
-        'userInfo.email': app.globalData.userInfo.email,
-        'userInfo.school': app.globalData.userInfo.school
-      })
-    }
+    
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-    this.fisrtOpen = false
+
   },
 
   /**

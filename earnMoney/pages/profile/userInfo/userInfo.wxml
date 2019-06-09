@@ -1,20 +1,48 @@
 <!--pages/profile/userInfo/userInfo.wxml-->
-<view class='weui-cells'>
+<view wx:if="{{detail.type  == 'student'}}" class='weui-cells'>
   <view class='weui-cell'>
-    <view class='we-ui__bd weui-label'>姓名</view>
-    <view class='we-ui__fd'>{{userInfo.name}}</view>
-  </view><view class='weui-cell'>
-    <view class='we-ui__bd weui-label'>邮箱</view>
-    <view class='we-ui__fd'>{{userInfo.email}}</view>
+    <view class='we-ui__bd weui-label'>用户类型</view>
+    <view class='we-ui__fd'>学生</view>
   </view>
   <view class='weui-cell'>
-    <view class='we-ui__bd weui-label'>学校</view>
-    <view class='we-ui__fd'>{{userInfo.school}}</view>
+    <view class='we-ui__bd weui-label'>学号</view>
+    <view class='we-ui__fd'>{{detail.sid}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>姓名</view>
+    <view class='we-ui__fd'>{{detail.name}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>年龄</view>
+    <view class='we-ui__fd'>{{detail.age}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>性别</view>
+    <view class='we-ui__fd'>{{detail.gender}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>年级</view>
+    <view class='we-ui__fd'>{{detail.grade}}</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>专业</view>
+    <view class='we-ui__fd'>{{detail.pro}}</view>
   </view>
 </view>
 
-<view wx:if="{{userInfo.status === 0 || userInfo.status === 2}}" class="weui-btn-area">
+<view wx:if="{{detail.type  == 'cow'}}" class='weui-cells'>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>用户类型</view>
+    <view class='we-ui__fd'>奶牛</view>
+  </view>
+  <view class='weui-cell'>
+    <view class='we-ui__bd weui-label'>组织全称</view>
+    <view class='we-ui__fd'>{{detail.name}}</view>
+  </view>
+</view>
+
+<view class="weui-btn-area">
   <navigator url="/pages/profile/userInfo_modify/userInfo_modify">
-    <button class="weui-btn" type="primary">修改个人信息</button>
+    <button class="weui-btn" type="primary">修改信息</button>
   </navigator>
 </view>

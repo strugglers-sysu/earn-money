@@ -1,6 +1,6 @@
 // pages/profile/profile.js
 
-const app = getApp()
+var app = getApp()
 const db = wx.cloud.database()
 
 Page({
@@ -9,7 +9,6 @@ Page({
    * Page initial data
    */
   data: {
-    userInfo: {},
     logged: false
   },
 
@@ -17,19 +16,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // 获取用户信息
+
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                userInfo: res.userInfo,
-                logged: true
-              })
-              console.log(res.userInfo)
-            }
+          // 已经授权，设置用户已登录
+          this.setData({
+            logged: true
           })
         }
       }
@@ -39,15 +32,15 @@ Page({
   onGetUserInfo: function (e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({
-        userInfo: e.detail.userInfo,
         logged: true
       })
     }
 
     db.collection('users').where({
-      _openid: app.globalData.openid
+      _openid: app.globalData.userInfo.openid
     }).count().then(res => {
       console.log(res.total)
+      // 新用户，添加到数据库
       if (res.total == 0) {
         db.collection('users').add({
           // data 字段表示需新增的 JSON 数据
@@ -60,8 +53,21 @@ Page({
           success: function (res) {
             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
             console.log(res)
+            app.globalData.userInfo.id = res._id
           },
           fail: console.error
+        })
+        wx.navigateTo({
+          url: './pick_userType/pick_userType',
+        })
+      }
+      // 老用户，访问数据库，设置本地变量
+      else {
+        db.collection('users').where({
+          _openid: app.globalData.userInfo.openid
+        }).get().then(res => {
+          app.globalData.userInfo.id = res.data[0]._id
+          app.globalData.userInfo.type = res.data[0].type
         })
       }
     })

@@ -1,12 +1,12 @@
 <!--pages/profile/about/about.wxml-->
 <view class="logo-container">
-    <image src="/res/images/money_avatar.jpeg"></image>
-    <view class="font-black-34">账户</view>
+    <image src="{{detail.avatarUrl}}"></image>
+    <view class="font-black-34">{{detail.nickName}}</view>
 </view>
 <view class="weui-cells">
     <view class="weui-cell">
         <view class="weui-cell__bd">钱包</view>
-        <view class="weui-cell__ft">100</view>
+        <view class="weui-cell__ft">￥{{detail.wallet}}</view>
     </view>
 </view>
 
