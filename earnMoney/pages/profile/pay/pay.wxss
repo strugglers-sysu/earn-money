@@ -30,9 +30,6 @@ text{
   border: 2px solid black;
   color: black;
 }
-.bg-gray {
-	background-color: white;
-}
 
 view{
 	font-size: 14px;

@@ -1,4 +1,4 @@
-<view class='bg-gray'>
+<view>
 
 <view class='main'>
   <text>选择充值金额（单位：元）</text>

@@ -3,17 +3,36 @@
 -->
 <view class="empty_container">
   <text class="common_label">问卷标题</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问卷标题'></input>
-  <text class="common_label">问卷描述</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题描述'></input>
-    <text class="common_label">问卷类型</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题类型'></input>
-    <text class="common_label">问题个数</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'></input>
-    <text class="common_label">面向用户</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题面向对象'></input>
-    <text class="common_label">其他补充</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入补充内容'></input>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问卷标题'
+    bindinput ="title"></input>
 
-<view class='thisbtn'>填写问卷</view>
+  <text class="common_label">问卷描述</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题描述'
+    bindinput ="description"></input>
+    
+    <text class="common_label">问卷类型</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题类型'
+    bindinput ="type"></input>
+
+    <text class="common_label">问题个数(单选)</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'
+    bindinput ="num1"></input>
+
+    <text class="common_label">问题个数(简答)</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'
+    bindinput ="num2"></input>
+
+    <text class="common_label">面向用户</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入面向对象'
+    bindinput ="open"></input>
+
+    <text class="common_label">报酬</text>
+    <input class="common_input" selection-start="3" type='text' placeholder='请输入报酬'
+    bindinput ="add"></input>
+
+  <view class='thisbtn' bindtap="loginBtnClick">
+    <navigator url="/pages/publish/qa/qa">
+    填写问卷
+    </navigator>
+  </view>
 </view>

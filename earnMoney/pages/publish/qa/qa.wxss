@@ -37,6 +37,26 @@ page {/**page可以在调试器中wxml中看见*/
   padding-left:30rpx;
 }
 
+.common_input1{
+  width: 500rpx;
+  height: 85rpx;
+  background: #FFF;
+  border-radius: 20rpx;
+  margin-left: 50rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-left:30rpx; 
+}
+
+.common_text{
+  width: 630rpx;
+  height: 110rpx;
+  background: #FFF;
+  border-radius: 20rpx;
+  margin-left: 50rpx;
+  padding-left:30rpx;
+}
+
 .deploy{
   height:70rpx;
   line-height: 70rpx;
@@ -124,14 +144,4 @@ margin-left:0;margin-right:0;border-radius:0;}
   padding:15px;
   border-radius:4px;
   box-shadow: 0px 3px 5px gary;
-}
-
-.answer {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #F0EFF5;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
 }

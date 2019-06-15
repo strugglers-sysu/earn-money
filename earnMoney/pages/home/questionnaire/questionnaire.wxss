@@ -41,7 +41,7 @@
 .answer {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #E0FFFF;
+  background-color: #F0EFF5;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 5px;
@@ -58,13 +58,13 @@
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 10px;
-  background-color: #E0FFFF;
+  background-color: white;
 }
 .checkbox {
   display: flex;
 }
 .myui-cell {
-  background-color: #E0FFFF;
+  background-color: white;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
