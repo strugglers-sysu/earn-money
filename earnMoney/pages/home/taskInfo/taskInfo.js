@@ -52,9 +52,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.request({
-      // url: 'options.id',
-    })
     console.log(options.id)
 
     // console.log('have a try')
