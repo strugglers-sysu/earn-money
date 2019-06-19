@@ -2,37 +2,28 @@
     空白模板创建
 -->
 <view class="empty_container">
-  <text class="common_label">问卷标题</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问卷标题'
-    bindinput ="title"></input>
+  <form bindsubmit='setBasic'>
+    <text class="common_label">问卷标题</text>
+    <input class="common_input" name="title" placeholder='请输入问卷标题'/>
 
-  <text class="common_label">问卷描述</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题描述'
-    bindinput ="description"></input>
+    <text class="common_label">问卷描述</text>
+    <input class="common_input" name="description" placeholder='请输入问题描述'/>
     
     <text class="common_label">问卷类型</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题类型'
-    bindinput ="type"></input>
+    <input class="common_input" name="type" placeholder='请输入问题类型'/>
 
     <text class="common_label">问题个数(单选)</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'
-    bindinput ="num1"></input>
+    <input class="common_input" name="num1" placeholder='请输入问题个数'/>
 
     <text class="common_label">问题个数(简答)</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入问题个数'
-    bindinput ="num2"></input>
+    <input class="common_input" name="num2" placeholder='请输入问题个数'/>
 
-    <text class="common_label">面向用户</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入面向对象'
-    bindinput ="open"></input>
+    <text class="common_label">问卷份数</text>
+    <input class="common_input" name="num3" placeholder='请输入问卷份数'/>
 
     <text class="common_label">报酬</text>
-    <input class="common_input" selection-start="3" type='text' placeholder='请输入报酬'
-    bindinput ="add"></input>
+    <input class="common_input" name="reward" placeholder='请输入报酬'/>
 
-  <view class='thisbtn' bindtap="loginBtnClick">
-    <navigator url="/pages/publish/qa/qa">
-    填写问卷
-    </navigator>
-  </view>
+    <button class="thisbtn" form-type='submit'>补充问题信息</button>
+  </form>
 </view>

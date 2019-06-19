@@ -5,62 +5,41 @@ Page({
    * Page initial data
    */
   data: {
-    t: " ",
-    d: " ",
-    y: " ",
-    n1: " ",
-    n2: " ",
-    o: " ",
-    a: " ",
+
   },
 
-  title: function (e) {
-    this.setData({
-      t: e.detail.value
-    })
-  },
-
-  description: function (e) {
-    this.setData({
-      d: e.detail.value
-    })
-  },
-  type: function (e) {
-    this.setData({
-      y: e.detail.value
-    })
-  },
-  num1: function (e) {
-    this.setData({
-      n1: e.detail.value
-    })
-  },
-  num2: function (e) {
-    this.setData({
-      n2: e.detail.value
-    })
-  },
-  open: function (e) {
-    this.setData({
-      o: e.detail.value
-    })
-  },
-  add: function (e) {
-    this.setData({
-      a: e.detail.value
-    })
-  },
-  loginBtnClick: function (e) {
-    wx.setStorageSync('t', this.data.t);
-    wx.setStorageSync('d', this.data.d);
-    wx.setStorageSync('y', this.data.y);
-    wx.setStorageSync('n1', this.data.n1);
-    wx.setStorageSync('n2', this.data.n2);
-    wx.setStorageSync('o', this.data.o);
-    wx.setStorageSync('a', this.data.a);
-    wx.navigateTo({
-      url: '/pages/publish/qa/qa'
-    })
+  setBasic: function (e) {
+    if (e.detail.value.title
+      && e.detail.value.description
+      && e.detail.value.type
+      && e.detail.value.num1
+      && e.detail.value.num2
+      && e.detail.value.num3
+      && e.detail.value.reward) {
+      wx.setStorageSync('ti', e.detail.value.title);
+      wx.setStorageSync('d', e.detail.value.description);
+      wx.setStorageSync('ty', e.detail.value.type);
+      wx.setStorageSync('n1', e.detail.value.num1);
+      wx.setStorageSync('n2', e.detail.value.num2);
+      wx.setStorageSync('n3', e.detail.value.num3);
+      wx.setStorageSync('r', e.detail.value.reward);
+      wx.navigateTo({
+        url: '/pages/publish/qa/qa',
+      })
+    }
+    else {
+      wx.showModal({
+        title: '提示',
+        content: '请填写完整问卷信息',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
   },
   /**
    * Lifecycle function--Called when page load

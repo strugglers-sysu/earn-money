@@ -7,49 +7,13 @@
         {{item.title}}
       </view>
       <view class='smallWord'>
-        分类: {{item.theme}}
+        分类: {{item.type}}
       </view>
       <view class='smallWord'>
-        剩余：{{item.remainingNumber}}
+        剩余：{{item.remain}}
       </view>
       <view class='smallWord'>
-        报酬：{{item.money}} 元
-      </view>
-      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
-    </view>
-</view>
-<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
-    <view wx:for='{{taskList}}' wx:key="index" 
-      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
-      <view>
-        {{item.title}}
-      </view>
-      <view class='smallWord'>
-        分类: {{item.theme}}
-      </view>
-      <view class='smallWord'>
-        剩余：{{item.remainingNumber}}
-      </view>
-      <view class='smallWord'>
-        报酬：{{item.money}} 元
-      </view>
-      <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
-    </view>
-</view>
-<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
-    <view wx:for='{{taskList}}' wx:key="index" 
-      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
-      <view>
-        {{item.title}}
-      </view>
-      <view class='smallWord'>
-        分类: {{item.theme}}
-      </view>
-      <view class='smallWord'>
-        剩余：{{item.remainingNumber}}
-      </view>
-      <view class='smallWord'>
-        报酬：{{item.money}} 元
+        报酬：{{item.reward}} 元
       </view>
       <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
     </view>

@@ -34,6 +34,7 @@ page {/**page可以在调试器中wxml中看见*/
   background: #FFF;
   border-radius: 20rpx;
   margin-left: 50rpx;
+  margin-bottom: 25rpx;
   padding-left:30rpx;
 }
 
@@ -116,12 +117,14 @@ margin-left:0;margin-right:0;border-radius:0;}
 .text-primary{color:#00a2e9;}
 
 .thisbtn{
+  height: 50px;
+  width: 200px;
   display: block;
-  margin: 50px 25px 50px 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   text-align: center;
   background-image:linear-gradient(to right,gray,black);
   color: white;
-  padding:15px;
   border-radius:4px;
   box-shadow: 0px 3px 5px gary;
 }

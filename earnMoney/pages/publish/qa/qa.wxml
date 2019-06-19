@@ -1,24 +1,22 @@
 <!--pages/empty_create/empty_create.wxml
     空白模板创建
 -->
-<view class="empty_container" wx:if='{{n1 > 0}}'>
-  <view class="empty_container" wx:for='{{n1 - 0}}'>
-    <text class="common_label">问题</text>
-      <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-      <input class="common_input1" selection-start="3" type='text' placeholder='请输入答案1'></input>
-      <input class="common_input1" selection-start="3" type='text' placeholder='请输入答案2'></input>
-      <input class="common_input1" selection-start="3" type='text' placeholder='请输入答案3'></input>
-      <input class="common_input1" selection-start="3" type='text' placeholder='请输入答案4'></input>
-  </view>
-</view>
+<view class="empty_container">
+  <form bindsubmit='setQuestionnaire'>
+    <view class="empty_container" wx:for='{{num1 - 0}}' wx:for-item="i">
+      <text class="common_label">单选题</text>
+        <input class="common_input" name="singlechoice{{i}}" placeholder='请输入问题'/>
+        <input class="common_input1" name="option1{{i}}" placeholder='请输入选项1'/>
+        <input class="common_input1" name="option2{{i}}" placeholder='请输入选项2'/>
+        <input class="common_input1" name="option3{{i}}" placeholder='请输入选项3'/>
+        <input class="common_input1" name="option4{{i}}" placeholder='请输入选项4'/>
+    </view>
 
-<view class="empty_container" wx:if='{{n2 > 0}}'>
-  <view class="empty_container" wx:for='{{n2 - 0}}'>
-    <text class="common_label">问题</text>
-      <input class="common_input" selection-start="3" type='text' placeholder='请输入问题'></input>
-  </view>
-</view>
+    <view class="empty_container" wx:for='{{num2 - 0}}' wx:for-item="i">
+      <text class="common_label">简答题</text>
+        <input class="common_input" name="shortanswer{{i}}" placeholder='请输入问题'/>
+    </view>
 
-  <view class='thisbtn'>
-    发布
-  </view>
+    <button class="thisbtn" form-type='submit'>发布</button>
+  </form>
+</view>
