@@ -75,13 +75,14 @@ Page({
     })
   },
   chargeMoney: function () {//充值
+    app.globalData.userInfo.wallet += this.data.numArray[this.data.activeIndex]
     db.collection('users').where({
       _openid: app.globalData.userInfo.openid
     }).get().then(res => {
       db.collection('users').doc(app.globalData.userInfo.id).update({
         // data 传入需要局部更新的数据
         data: {
-          wallet: res.data[0].wallet + this.data.numArray[this.data.activeIndex]
+          wallet: app.globalData.userInfo.wallet
         }
       })
       .then(console.log)
