@@ -1,66 +1,28 @@
 // pages/home/questionnaire/questionnaire.js
+
+const db = wx.cloud.database()
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    task: {
-      id: 1,
-      publisher: 'WJH',
-      starttime: '2019-05-23',
-      endtime: '2019-06-23',
-      title: 'Game in your life',
-      number: 10,
-      remainingNumber: 5,
-      money: 10,
-      content: '这是一套针对网络游戏、网页游戏和上网习惯的专业网络调查问卷，题目一方面想了解玩家的生活情况，另一面涵盖网游类型、题材和游戏玩法设计、交易系统等核心要素，可充分了解网游玩家的真实想法，是每位玩家发表自己对网游内心观点的最佳场所，同时也可以帮助游戏从业者加深对网游市场的调查研究！',
-      questionList: [
-        {
-          id: 0,
-          type: 0,
-          question: 'What games do you play',
-          answer: ''
-        },
-        {
-          id: 1,
-          type: 0,
-          question: 'Do you play games in teams',
-          answer: ''
-        },
-        {
-          id: 2,
-          type: 1,
-          question: 'How much time do you play games every week',
-          optionalAnswers: [
-            { id: 0, option: 'a day', isChecked: false}, 
-            { id: 1, option: 'one hour', isChecked: false }, 
-            { id: 2, option: 'two hour', isChecked: false }, 
-            { id: 3, option: 'three minutes', isChecked: false},
-          ],
-        }
-      ],
-      Fillers: [
-
-      ],
-    },
+    task: {},
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.showLoading({ title: '加载中', })
-    // var that = this
-    // wx.getStorage({
-    //   key: 'task',
-    //   success: function (res) {
-    //     that.setData({
-    //       task: res.data
-    //     })
-    //   }
-    // })
-    // console.log(task.id) why
+    console.log(options)
+    db.collection('tasks').where({
+      _id: options.id
+    }).get().then(res => {
+      this.setData({
+        task: res.data[0]
+      })
+    })
   },
 
   /**

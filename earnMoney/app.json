@@ -11,8 +11,10 @@
     "pages/profile/about/about",
     "pages/profile/money/money",
     "pages/profile/pay/pay",
+    "pages/profile/pick_userType/pick_userType",
     "pages/publish/publish",
-    "pages/profile/pick_userType/pick_userType"
+    "pages/publish/publishqa/publishqa",
+    "pages/publish/publishqa/qa/qa"
   ],
   "window": {
     "backgroundTextStyle": "light",

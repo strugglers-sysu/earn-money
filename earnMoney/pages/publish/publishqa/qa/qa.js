@@ -1,4 +1,5 @@
 
+var app = getApp()
 const db = wx.cloud.database()
 
 Page({
@@ -42,7 +43,7 @@ Page({
       questionList = questionList.concat([{
         id: index,
         type: 1,
-        question: e.detail.value['singlechoice' + i],
+        question: e.detail.value['shortanswer' + i],
       }])
     }
     db.collection('tasks').add({
@@ -59,7 +60,20 @@ Page({
     })
     .then(res => {
       console.log(res)
-      wx.showToast({ // 显示Toast
+
+      // 减少“闲钱币”
+      var money = this.data.num3 * this.data.reward
+      app.globalData.userInfo.wallet -= money
+      db.collection('users').doc(app.globalData.userInfo.id).update({
+        data: {
+          wallet: app.globalData.userInfo.wallet
+        }
+      })
+      .then(console.log)
+      .catch(console.error)
+
+      // 显示Toast并返回首页
+      wx.showToast({
         title: '发布成功',
         icon: 'success',
         duration: 10000,
@@ -70,6 +84,7 @@ Page({
           })
         }
       }) 
+
     })
     .catch(console.error)
 }

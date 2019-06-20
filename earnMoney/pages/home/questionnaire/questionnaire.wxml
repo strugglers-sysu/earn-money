@@ -8,17 +8,20 @@
   <!-- <view wx:if="{{type == 0}}">
     <textarea name='{{id}}' class="myui-textarea" placeholder="" maxlength="50"/>
   </view> -->
-
-  <view class="myui-cell weui-cells weui-cells_after-title" wx:if="{{type == 0}}">
-    <textarea class="weui-textarea" name='{{id}}' placeholder="" maxlength="50" bindinput="onInput" />
-  </view>
-  <view class='answer' wx:elif="{{type == 1}}">      
-      <checkbox-group name="{{id}}" bindchange="checkboxChange">
-        <label class="checkbox" wx:for="{{optionalAnswers}}" >
-          <checkbox name="{{id}}" value="{{index}}" checked='{{item.isChecked}}'/>{{item.option}}
+  <view class='answer' wx:if="{{type == 0}}">      
+      <!-- <checkbox-group name="{{id}}" bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{options}}" >
+          <checkbox name="{{id}}" value="{{index}}" checked='false'/>{{item}}
         </label>
-      </checkbox-group>
-    <!-- </view> -->
+      </checkbox-group> -->
+      <radio-group name="{{id}}" class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{options}}">
+          <radio value="{{index}}"/>{{item}}
+        </label>
+      </radio-group>
+  </view>
+  <view class="myui-cell weui-cells weui-cells_after-title" wx:elif="{{type == 1}}">
+    <textarea class="weui-textarea" name='{{id}}' placeholder="请输入您的答案" maxlength="50" bindinput="onInput" />
   </view>
 </template>
 

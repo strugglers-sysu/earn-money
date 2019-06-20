@@ -2,7 +2,7 @@
 
 <view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
     <view wx:for='{{taskList}}' wx:key="index" 
-      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{index}}'>
+      class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{item._id}}'>
       <view>
         {{item.title}}
       </view>

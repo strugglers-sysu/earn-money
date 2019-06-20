@@ -74,3 +74,9 @@
   border-radius: 10px;
   height: 90px;
 }
+
+.radio-group{
+  display: flex;
+  flex-direction: column;
+}
+

@@ -1,101 +1,75 @@
-// pages/publish/publish.js
+// earnMoney/pages/publish/publish.js
 Page({
 
   /**
-   * Page initial data
+   * 页面的初始数据
    */
   data: {
 
   },
 
-  setBasic: function (e) {
-    if (e.detail.value.title
-      && e.detail.value.description
-      && e.detail.value.type
-      && e.detail.value.num1
-      && e.detail.value.num2
-      && e.detail.value.num3
-      && e.detail.value.reward) {
-      wx.setStorageSync('ti', e.detail.value.title);
-      wx.setStorageSync('d', e.detail.value.description);
-      wx.setStorageSync('ty', e.detail.value.type);
-      wx.setStorageSync('n1', e.detail.value.num1);
-      wx.setStorageSync('n2', e.detail.value.num2);
-      wx.setStorageSync('n3', e.detail.value.num3);
-      wx.setStorageSync('r', e.detail.value.reward);
-      wx.navigateTo({
-        url: '/pages/publish/qa/qa',
-      })
-    }
-    else {
-      wx.showModal({
-        title: '提示',
-        content: '请填写完整问卷信息',
-        success(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-    }
-  },
   /**
-   * Lifecycle function--Called when page load
+   * 生命周期函数--监听页面加载
    */
-
   onLoad: function (options) {
 
   },
 
   /**
-   * Lifecycle function--Called when page is initially rendered
+   * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page show
+   * 生命周期函数--监听页面显示
    */
   onShow: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page hide
+   * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page unload
+   * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
 
   },
 
   /**
-   * Page event handler function--Called when user drop down
+   * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
 
   },
 
   /**
-   * Called when page reach bottom
+   * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
 
   /**
-   * Called when user click on the top right corner to share
+   * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
-  }
+  },
 
+  /**
+   * 跳转到发布问卷页面
+   */
+  toPublishQa: function () {
+    wx.navigateTo({
+      url: '/pages/publish/publishqa/publishqa'
+    })
+  }
 })
