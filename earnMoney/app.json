@@ -14,7 +14,8 @@
     "pages/profile/pick_userType/pick_userType",
     "pages/publish/publish",
     "pages/publish/publishqa/publishqa",
-    "pages/publish/publishqa/qa/qa"
+    "pages/publish/publishqa/qa/qa",
+    "pages/publish/publishta/publishta"
   ],
   "window": {
     "backgroundTextStyle": "light",

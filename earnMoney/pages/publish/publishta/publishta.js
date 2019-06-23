@@ -1,11 +1,17 @@
-// earnMoney/pages/publish/publish.js
+// earnMoney/pages/publish/publishta/punlishta.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    selectArray: [{
+      "id": "10",
+      "text": "跑腿"
+    }, {
+      "id": "20",
+      "text": "其他"
+    }]
   },
 
   /**
@@ -62,23 +68,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 跳转到发布问卷页面
-   */
-  toPublishQa: function () {
-    wx.navigateTo({
-      url: '/pages/publish/publishqa/publishqa'
-    })
-  },
-
-  /**
-   * 跳转到发布任务页面
-   */
-  toPublishTa: function () {
-    wx.navigateTo({
-      url: '/pages/publish/publishta/publishta'
-    })
   }
 })
