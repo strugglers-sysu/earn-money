@@ -1,0 +1,2 @@
+<!--earnMoney/pages/publish/publishta/punlishta.wxml-->
+<Select prop-array='{{selectArray}}'></Select>

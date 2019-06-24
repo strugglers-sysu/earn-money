@@ -15,7 +15,8 @@
     "pages/profile/userInfo_modify/userInfo_modify",
     "pages/profile/about/about",
     "pages/publish/publishqa/publishqa",
-    "pages/publish/publishqa/qa/qa"
+    "pages/publish/publishqa/qa/qa",
+    "pages/publish/publishta/publishta"
   ],
   "window": {
     "backgroundTextStyle": "light",

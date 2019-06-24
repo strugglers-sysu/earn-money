@@ -97,5 +97,14 @@ Page({
     wx.navigateTo({
       url: '/pages/publish/publishqa/publishqa'
     })
+  },
+
+  /**
+   * 跳转到发布任务页面
+   */
+  toPublishTa: function () {
+    wx.navigateTo({
+      url: '/pages/publish/publishta/publishta'
+    })
   }
 })
