@@ -1,25 +1,79 @@
 /* earnMoney/pages/publish/publish.wxss */
-.empty_container {
-  width: 100%;
-  position: fixed;
+@import '/styles/weui.wxss';
+page{
+  /* height: 100%; */
+}
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+
+.top-navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  align-items: center;
+
+  margin: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.top_navigation_bar_content {
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.top_navigation_bar_content.active{
+  color: #3CC51F;
+  border-bottom: 1.5px solid #3CC51F;
+}
+.top_navigation_bar_content.active::after{
+  background-color: #FFFFFF;
+}
+.fill_items {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
+.fill_items_title {
+  font-size: 14px;
+  margin: 10px;
+  background-color: #EAEAEA;
+  border-radius: 10px;
+
+  display: flex;
   justify-content: center;
-  bottom: 50px;
+  align-items: center;
+  width: 25%;
+}
+.fill_items_input {
+  margin: 10px;
+  padding: 5px;
+  background-color: #E0EEE0;
+  border-radius: 5px;
+  word-wrap: true;
+  display: flex;
+  width: 70%;
+  text-align: center;
+}
+.fill_items_input.active {
+  border: 2px, #3CC51F;
 }
 
-.publishqa_button {
-  width: 150px; 
-  height: 50px;
-  border-radius: 10%;
-  margin-bottom: 10px;
-  background-image:linear-gradient(to right,gray,black);
-  color: white;
+.fill_body_scroll {
+  /* position: absolute; */
 }
 
-.publishta_button{
-  width: 150px; 
-  height: 50px;
-  border-radius: 10%;
-  margin-top: 10px;
-  background-image:linear-gradient(to right,gray,black);
-  color: white;
+.myui-btn {
+  margin-top: 15px;
+  /* margin: 5px; */
+}
+.myui-btn-area {
+  /* margin: 1.17647059em 15px 0.3em; */
+  margin-top: 15px;
+  margin: 5px;
 }

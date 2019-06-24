@@ -21,7 +21,7 @@
       </radio-group>
   </view>
   <view class="myui-cell weui-cells weui-cells_after-title" wx:elif="{{type == 1}}">
-    <textarea class="weui-textarea" name='{{id}}' placeholder="请输入您的答案" maxlength="50" bindinput="onInput" />
+    <textarea class="weui-textarea" name='{{id}}' placeholder="" maxlength="50" bindinput="onInput" />
   </view>
 </template>
 

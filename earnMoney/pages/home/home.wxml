@@ -1,12 +1,41 @@
 <!--pages/home/home.wxml-->
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <!-- 聚焦后的搜索输入框 -->
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" confirm-type="search" placeholder="" value="{{search.input}}" focus="{{search.focus}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+      <view class="weui-icon-clear" bindtap="wxSearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <!-- 未聚焦时的搜索输入框 -->
+    <label class="weui-search-bar__label" hidden="{{search.focus}}" bindtap="wxSearchOnfocus">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">Search</view>
+    </label>
+  </view>
+  <!-- <view wx:if="{{search.focus}}"class="weui-search-bar__cancel-btn" bindtap="wxSearchBack">
+    <text data-key='back'>return</text>
+  </view> -->
+</view>
 
-<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row;">
+
+<view class="classification">
+  <checkbox-group name="{{id}}" bindchange="checkboxChange">
+    <label class="label" wx:for="{{classification}}" >
+      <checkbox class="{{item}}" name="{{item}}" value="{{item}}" checked='true'/>{{item}}
+    </label>
+  </checkbox-group>
+</view>
+
+<view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row; background-color: #F0EFF5;">
     <view wx:for='{{taskList}}' wx:key="index" 
       class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{item._id}}'>
       <view>
         {{item.title}}
       </view>
-      <view class='smallWord'>
+      <!-- <view class='smallWord'>
         分类: {{item.type}}
       </view>
       <view class='smallWord'>
@@ -14,27 +43,9 @@
       </view>
       <view class='smallWord'>
         报酬：{{item.reward}} 元
-      </view>
+      </view> -->
       <!-- <view class="weui-cell__ft_in-access weui-cell__ft"></view> -->
     </view>
 </view>
 <load-more status="{{loadMoreStatus}}" nomore-text="没有更多问卷了"></load-more>
 <no-data wx:if="{{isNoData}}"></no-data>
-
-
-      <!-- <view class="myui-book-card__info font-gray-26">
-        <view class="myui-book-card__info-title font-black-34">{{item.book.title}}</view>
-        <view>作者:
-          <text wx:for="{{item.book.author}}" wx:key="{{item}}" class="myui-book-card__info-name">{{item}}</text>
-        </view>
-        <view>出版社: {{item.book.publisher}}</view>
-        <view>图书馆: {{item.library.name}}</view>
-        <block wx:if="{{item.status == ORDER_STATUS.CANCELED_BY_USER}}">
-          <view>创建日期：{{item.created_at}}</view>
-          <view>订单状态：已取消</view>
-        </block>
-        <block wx:else>
-          <view>借阅日期：{{item.actual_take_time}}</view>
-          <view>还书日期：{{item.actual_return_time}}</view>
-        </block>
-      </view> -->

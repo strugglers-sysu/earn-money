@@ -18,8 +18,9 @@ page {
 }
 
 .default-avatar {
-  width: 64px; 
-  height: 64px;
+  width: 100px; 
+  height: 100px;
+  margin-top: 50px;
   border-radius: 50%;
   background-size: cover;
   background-color: white;

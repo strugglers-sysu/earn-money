@@ -1,29 +1,27 @@
-// pages/profile/about/about.js
-
-var app = getApp()
-const db = wx.cloud.database()
-
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-    userInfo: app.globalData.userInfo,
-    detail: {
-      avatarUrl: '/res/images/money_avatar.jpeg',
-      nickName: '账户',
-      wallet: 0
-    }
+    cardList: [
+      {
+        name: 'aa',
+        content: 'bb'
+      }, 
+    ],
+    top_navigation_bar_content: ['已完成', '处理中'],
+    currentTab: 0
   },
-
+  topnavbarTap: function(e) {
+    this.setData({
+      'currentTab': e.currentTarget.dataset.idx
+    })
+    console.log(this.data.currentTab)
+    // console.log(currentTab) 不能通过名字调用，会出现 ReferenceError: currentTab is not defined
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    
-  },
 
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -35,15 +33,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    db.collection('users').where({
-      _openid: app.globalData.userInfo.openid
-    }).get().then(res => {
-      this.setData({
-        'detail.avatarUrl': res.data[0].avatarUrl,
-        'detail.nickName': res.data[0].nickName,
-        'detail.wallet': res.data[0].wallet,
-      })
-    })
+
   },
 
   /**
@@ -79,5 +69,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
+  }
 })

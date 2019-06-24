@@ -5,7 +5,7 @@
 </view>
 <view class="weui-cells">
     <view class="weui-cell">
-        <view class="weui-cell__bd">钱包</view>
+        <view class="weui-cell__bd"> 余额</view>
         <view class="weui-cell__ft">￥{{detail.wallet}}</view>
     </view>
 </view>
@@ -20,9 +20,9 @@
 <view class="weui-msg__extra-area">
     <view class="weui-footer">
         <view class="weui-footer__links">
-            <view class="weui-footer__link" url="">GitHub @imageslr</view>
+            <view class="weui-footer__link" url="">GitHub @earn-money</view>
         </view>
-        <view class="weui-footer__text">Copyright © 2019-2020 Imageslr</view>
+        <view class="weui-footer__text">Copyright © 2019-2020 earn-money</view>
     </view>
 </view>
 

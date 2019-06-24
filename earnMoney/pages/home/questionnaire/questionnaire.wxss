@@ -41,11 +41,12 @@
 .answer {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #F0EFF5;
+  background-color: rgb(6, 179, 202);
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 5px;
   margin-right: 5px;
+  border-radius: 10px;
 }
 .myui-textarea {
   /* display: block; */
@@ -58,7 +59,7 @@
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 10px;
-  background-color: white;
+  background-color: #E0EEEE;
 }
 .checkbox {
   display: flex;

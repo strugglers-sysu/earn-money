@@ -1,0 +1,40 @@
+page{
+  /* height: 100%; */
+}
+
+.top-navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  align-items: center;
+
+  margin: 5px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.top_navigation_bar_content {
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.top_navigation_bar_content.active{
+  color: #3CC51F;
+  border-bottom: 1.5px solid #3CC51F;
+}
+.top_navigation_bar_content.active::after{
+  background-color: #FFFFFF;
+}
+
+.fill_body_scroll {
+  /* position: absolute; */
+}
+
+.myui-btn {
+  margin-top: 15px;
+}
+.myui-btn-area {
+  margin: 1.17647059em 15px 0.3em;
+}

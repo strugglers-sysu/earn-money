@@ -13,7 +13,6 @@ Page({
     date: '',
     task: {}
   },
-
   /**
    * Lifecycle function--Called when page load
    */
@@ -22,11 +21,12 @@ Page({
     db.collection('tasks').where({
       _id: options.id
     }).get().then(res => {
+      var util = require('../../../utils/util.js')
       this.setData({
         task: res.data[0],
-        date: res.data[0].createTime.toString()
+        date: util.formatTime(res.data[0].createTime)
       })
-    })
+    }),
     db.collection('users').where({
       _openid: this.data.task._openid
     }).get().then(res => {

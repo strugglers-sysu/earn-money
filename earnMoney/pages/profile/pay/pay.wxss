@@ -12,22 +12,26 @@ text{
   flex-flow: wrap;
 }
 .itemBox view{
+  height: 33.3%;
   width: 33.3%;
   box-sizing: border-box;
 }
+.itemBox::after {
+  border: none;
+}
 .itemBox view>div{
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   margin:5px;
-  border-radius: 8px;
-  background: gray;
+  border-radius: 10px;
+  background: #3CC4A9;
   border: 2px solid white;
-  color: white;
-  font-size: 15px;
+  color: black;
+  font-size: 16px;
 }
 .itemBox view.active>div{
   background: white;
-  border: 2px solid black;
+  border: 2px solid #3CC4A9;
   color: black;
 }
 

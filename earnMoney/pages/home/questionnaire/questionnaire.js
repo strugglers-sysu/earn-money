@@ -81,6 +81,7 @@ Page({
     // console.log('id', e.detail.id)
     console.log('id', e.detail.name)
     var selected = e.detail.value;
+    console.log('selected', selected)
     // console.log('length', selected.length)
     // for (var i = 0; i < selected.length; ++i) {
     //   console.log('index', selected[i])

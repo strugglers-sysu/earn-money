@@ -1,6 +1,6 @@
 <!--earnMoney/pages/profile/pick_userType/pick_userType.wxml-->
 <view class='weui-cells'>
-  <text class="title">请选择用户类型</text>
+  <view class="weui-cell">请选择用户类型</view>
   <view class='weui-cell'>
     <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio" wx:for="{{items}}">
@@ -8,7 +8,7 @@
       </label>
     </radio-group>
   </view>
-  <view class="weui-btn-area">
-    <button class="weui-btn" bindtap="setUserType" type="primary">提交</button>
-  </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" bindtap="setUserType" type="primary">提交</button>
 </view>

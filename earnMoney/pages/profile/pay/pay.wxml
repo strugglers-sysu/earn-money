@@ -1,12 +1,10 @@
 <view>
-
-<view class='main'>
-  <text>选择充值金额（单位：元）</text>
-    <view class='flex between itemBox'>
-      <view class="{{activeIndex == index ? 'active':''}}"  wx:for="{{numArray}}" bindtap='activethis' data-thisindex='{{index}}'><div>{{item}}</div></view>
-    </view>
-</view>
-
-<view class='thisbtn' bindtap='chargeMoney'>充值</view>
-
+  <view class='main'>
+      <view class='flex between itemBox'>
+        <view class="{{activeIndex == index ? 'active':''}}"  wx:for="{{numArray}}" bindtap='activethis' data-thisindex='{{index}}'><div>{{item}}</div></view>
+      </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" bindtap="chargeMoney" type="primary">充值</button>
+  </view>
 </view>

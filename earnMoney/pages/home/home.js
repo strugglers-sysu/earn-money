@@ -8,9 +8,50 @@ Page({
    * Page initial data
    */
   data: {
-    taskList: []
-  },
+    search: {
+      focus: false,
+      history: [],
+      input: "",
+    },
+    taskList: [],
+    classification: ["task", "questionnaire", "cow", "student"]
+  }, 
+  // 监听软键盘确认键
+  wxSearchConfirm: function (e) {
 
+  },
+  wxSearchOnfocus: function() {
+    this.setData({
+      'search.focus': true
+    })
+  }, 
+  wxSearchInput: function() {
+    this.setData({
+      'search.focus': true
+    })
+  }, 
+  wxSearchClear: function () {
+    this.setData({
+      'search.input': "",
+      'search.focus': false
+    })
+  },
+  wxSearchBack: function() {
+    this.setData({
+      'search.focus': false
+    })
+  },
+  checkboxChange: function(e) {
+    console.log('id', e.detail.name)
+    var selected = e.detail.value;
+    console.log('selected', selected)
+    db.collection('tasks').get().then(res => {
+      console.log(res.data)
+      this.setData({
+        taskList: res.data
+      })
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
