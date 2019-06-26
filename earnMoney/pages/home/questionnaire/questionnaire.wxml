@@ -1,38 +1,26 @@
 <!--pages/home/questionnaire/questionnaire.wxml-->
 
-<template name="questionShow">
-  <view class='question'>
-    <view class='question_index'>{{id}}.</view>
-    <view class='question_item'>{{question}}</view>
-  </view>
-  <!-- <view wx:if="{{type == 0}}">
-    <textarea name='{{id}}' class="myui-textarea" placeholder="" maxlength="50"/>
-  </view> -->
-  <view class='answer' wx:if="{{type == 0}}">      
-      <!-- <checkbox-group name="{{id}}" bindchange="checkboxChange">
-        <label class="checkbox" wx:for="{{options}}" >
-          <checkbox name="{{id}}" value="{{index}}" checked='false'/>{{item}}
-        </label>
-      </checkbox-group> -->
-      <radio-group name="{{id}}" class="radio-group" bindchange="radioChange">
-        <label class="radio" wx:for="{{options}}">
-          <radio value="{{index}}"/>{{item}}
-        </label>
-      </radio-group>
-  </view>
-  <view class="myui-cell weui-cells weui-cells_after-title" wx:elif="{{type == 1}}">
-    <textarea class="weui-textarea" name='{{id}}' placeholder="" maxlength="50" bindinput="onInput" />
-  </view>
-</template>
-
 <form bindsubmit='submitQuestionnaire'>
   <view wx:for="{{task.questionList}}" wx:key='id'>
-    <template is="questionShow" data='{{...item}}'/>
+    <view class='question'>
+      <view class='question_index'>{{item.id}}.</view>
+      <view class='question_item'>{{item.question}}</view>
+    </view>
+    <view class='answer' wx:if="{{item.type == 0}}">      
+        <radio-group name="{{item.id}}" class="radio-group">
+          <label class="radio" wx:for="{{item.options}}">
+            <radio value="{{index}}"/>{{item}}
+          </label>
+        </radio-group>
+    </view>
+    <view class="myui-cell weui-cells weui-cells_after-title" wx:elif="{{item.type == 1}}">
+      <input class="weui-textarea" name='{{item.id}}' placeholder="" maxlength="50"/>
+    </view>
   </view>
   <view class="weui-btn-area">
     <button class="weui-btn" form-type='submit' type="primary">提交</button>
   </view>
-  </form>
+</form>
 
 
 
