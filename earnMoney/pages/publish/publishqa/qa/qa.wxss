@@ -42,7 +42,7 @@ page {/**page可以在调试器中wxml中看见*/
   height: 85rpx;
   background: #FFF;
   border-radius: 20rpx;
-  margin-left: 100rpx;
+  margin-left: 50rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
   padding-left:30rpx; 

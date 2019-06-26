@@ -4,39 +4,35 @@
     <text wx:for="{{top_navigation_bar_content}}" wx:key="{{index}}" bindtap="topnavbarTap" data-idx="{{index}}" 
       class="top_navigation_bar_content {{currentTab == index ? 'active' : ''}}">{{item}}</text>
   </view>
+
   <scroll-view class="fill_body_scroll" scroll-y style="height: 100%">
+
     <view wx:for="{{taskinfoList}}" class="fill_items" hidden="{{currentTab==1}}">
       <view class="fill_items_title">
         {{item}}
-      </view>
-      <input class="fill_items_input" wx:if="{{index!=3}}">
-      </input>
-      <view class="fill_items_input" wx:if="{{index==3}}">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-          <input placeholder="{{date}}">
-              <!-- {{date}} -->
-          </input>
-        </picker>
-      </view>
+      </view>  
     </view>
+
     <view wx:for="{{qainfoList}}" class="fill_items" hidden="{{currentTab==0}}">
       <view class="fill_items_title">
         {{item}}
       </view>
-      <input class="fill_items_input" wx:if="{{index!=4}}">
-      </input>
-      <view class="fill_items_input" wx:if="{{index==4}}">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-          <input placeholder="{{date}}" focus="false">
-              <!-- {{date}} -->
-          </input>
-        </picker>
-      </view>
     </view>
 
+    <view class="myui-btn-area" wx:if= "{{currentTab == 0}}">
+      <navigator url='/pages/publish/publishtk/publishtk'>
+      <button class="myui-btn" form-type='submit' type="primary">
+        发布任务
+      </button>
+      </navigator>
+    </view>
 
-    <view class="myui-btn-area">
-      <button class="myui-btn" form-type='submit' type="primary">提交</button>
+    <view class="myui-btn-area" wx:if= "{{currentTab == 1}}">
+      <navigator url='/pages/publish/publishqa/publishqa'>
+      <button class="myui-btn" form-type='submit' type="primary">
+        发布问卷
+      </button>
+      </navigator>
     </view>
   </scroll-view>
 </view>

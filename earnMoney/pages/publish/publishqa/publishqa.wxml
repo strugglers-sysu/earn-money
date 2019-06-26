@@ -1,27 +1,69 @@
 <!--earnMoney/pages/publish/publishqa/publishqa.wxml-->
 <view class="empty_container">
   <form bindsubmit='setBasic'>
-    <text class="common_label">问卷标题</text>
-    <input class="common_input" name="title" placeholder='请输入问卷标题'/>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">问卷标题</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="title" placeholder="请输入问卷标题" />
+      </view>
+    </view>
 
-    <text class="common_label">问卷描述</text>
-    <input class="common_input" name="description" placeholder='请输入问题描述'/>
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">问卷描述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="description" placeholder="请输入描述信息" />
+      </view>
+    </view>
     
-    <text class="common_label">问卷类型</text>
-    <input class="common_input" name="type" placeholder='请输入问题类型'/>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">问卷类型</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="type" placeholder="请输入问卷类型" />
+      </view>
+    </view>
 
-    <text class="common_label">问题个数(单选)</text>
-    <input class="common_input" name="num1" placeholder='请输入问题个数'/>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">单选题个数</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="num1" placeholder="请输入单选题个数" />
+      </view>
+    </view>
 
-    <text class="common_label">问题个数(简答)</text>
-    <input class="common_input" name="num2" placeholder='请输入问题个数'/>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">简答题个数</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="num2" placeholder="请输入简答题个数" />
+      </view>
+    </view>
 
-    <text class="common_label">问卷份数</text>
-    <input class="common_input" name="num3" placeholder='请输入问卷份数'/>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">问卷份数</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="num3" placeholder="请输入问卷份数" />
+      </view>
+    </view>
 
-    <text class="common_label">报酬</text>
-    <input class="common_input" name="reward" placeholder='请输入报酬'/>
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">报酬</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="reward" placeholder="请输入报酬" />
+      </view>
+    </view>
 
-    <button class="thisbtn" form-type='submit'>补充问题信息</button>
+    <button class="thisbtn" form-type='submit'>填写问卷问题</button>
   </form>
 </view>

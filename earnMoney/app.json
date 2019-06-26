@@ -16,7 +16,7 @@
     "pages/profile/about/about",
     "pages/publish/publishqa/publishqa",
     "pages/publish/publishqa/qa/qa",
-    "pages/publish/publishta/publishta"
+    "pages/publish/publishtk/publishtk"
   ],
   "window": {
     "backgroundTextStyle": "light",

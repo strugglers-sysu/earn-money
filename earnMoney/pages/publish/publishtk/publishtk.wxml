@@ -1,0 +1,51 @@
+<!--earnMoney/pages/publish/publishqa/publishqa.wxml-->
+<view class="empty_container">
+  <form bindsubmit='setBasic'>
+    <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <view class="weui-label">任务类型</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="type" placeholder="请输入任务类型" />
+      </view>
+    </view>
+
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">任务描述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="description" placeholder="请输入描述信息" />
+      </view>
+    </view>
+
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">报酬</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="reward" placeholder="请输入报酬" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">目的地</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="des" placeholder="请任务目的地" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">完成时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="time" placeholder="请完成时间" />
+      </view>
+    </view>
+
+    <button class="thisbtn" form-type='submit'>发布任务</button>
+  </form>
+</view>
