@@ -3,7 +3,6 @@
     "pages/home/home",
     "pages/publish/publish",
     "pages/profile/task_history/task_history",
-    "pages/index/index",
     "pages/profile/profile",
     "pages/profile/pay/pay",
     "pages/profile/money/money",
@@ -16,8 +15,7 @@
     "pages/publish/publishqa/publishqa",
     "pages/publish/publishqa/qa/qa",
     "pages/publish/publishta/publishta",
-    "pages/profile/task_history/task_result/task_result",
-    "pages/profile/task_history/result_info/result_info"
+    "pages/profile/task_history/task_result/task_result"
   ],
   "window": {
     "backgroundTextStyle": "light",

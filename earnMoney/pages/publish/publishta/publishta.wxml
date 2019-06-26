@@ -1,2 +1,6 @@
 <!--earnMoney/pages/publish/publishta/punlishta.wxml-->
 <Select prop-array='{{selectArray}}'></Select>
+<view class="empty_container">
+  <form>
+  </form>
+</view>

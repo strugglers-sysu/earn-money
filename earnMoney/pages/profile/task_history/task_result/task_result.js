@@ -79,20 +79,6 @@ Page({
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  },
-
   naviToInfo: function (e) {
     let index = e.currentTarget.dataset.index;
     console.log('id', index)
@@ -100,6 +86,4 @@ Page({
       url: '/pages/profile/task_history/result_info/result_info?id=' + index
     })
   }
-
-
 })

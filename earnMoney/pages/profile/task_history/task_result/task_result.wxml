@@ -22,10 +22,10 @@
     题目{{item.id}}.{{item.question}}
   </view>
   <view class='answer' wx:if="{{item.type == 0}}" style="margin-left:20px;">
-    <view>1. {{item.options[0]}}</view>
-    <view>2. {{item.options[1]}}</view>
-    <view>3. {{item.options[2]}}</view>
-    <view>4. {{item.options[3]}}</view>
+    <view>0. {{item.options[0]}}</view>
+    <view>1. {{item.options[1]}}</view>
+    <view>2. {{item.options[2]}}</view>
+    <view>3. {{item.options[3]}}</view>
   </view>
 </view>
 

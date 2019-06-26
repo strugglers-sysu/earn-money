@@ -30,7 +30,7 @@ Page({
       })
       if (res.data[0].publisher == app.globalData.userInfo.id) {
         this.setData({
-          disabled: false,
+          disabled: true,
           buttonContent: '该问卷为本人发布，不能填写',
         })
       }
