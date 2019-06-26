@@ -79,6 +79,23 @@ Page({
     db.collection('users').where({
       _id: app.globalData.userInfo.id
     }).get().then(res2 => {
+      app.globalData.userInfo.wallet += this.data.task.reward
+      db.collection('users').doc(app.globalData.userInfo.id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          wallet: app.globalData.userInfo.wallet
+        }
+      })
+      .then(console.log)
+      .catch(console.error)
+      db.collection('tasks').doc(this.data.task._id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          remain: this.data.task.remain - 1
+        }
+      })
+      .then(console.log)
+      .catch(console.error)
       db.collection('answers').add({
         data: {
           nickName: res2.data[0].nickName,
@@ -89,22 +106,22 @@ Page({
           answer: e.detail.value
         }
       })
-        .then(res => {
-          console.log(res)
-          // 显示Toast并返回首页
-          wx.showToast({
-            title: '提交成功',
-            icon: 'success',
-            duration: 10000,
-            mask: true,
-            success(res) {
-              wx.switchTab({
-                url: '/pages/home/home',
-              })
-            }
-          })
+      .then(res => {
+        console.log(res)
+        // 显示Toast并返回首页
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 10000,
+          mask: true,
+          success(res) {
+            wx.switchTab({
+              url: '/pages/home/home',
+            })
+          }
         })
-        .catch(console.error)
+      })
+      .catch(console.error)
     })
   }
 })
