@@ -1,39 +1,49 @@
-
+// earnMoney/pages/profile/task_history/task_result/task_result.js
 var app = getApp()
 const db = wx.cloud.database()
 
 Page({
+
+  /**
+   * Page initial data
+   */
   data: {
-    cardList: [
-      {
-        name: 'aa',
-        content: 'bb'
-      }, 
-    ],
-    top_navigation_bar_content: ['我发布的', '我做过的'],
-    currentTab: 0,
-    taskList: []
-  },
-  topnavbarTap: function(e) {
-    this.setData({
-      'currentTab': e.currentTarget.dataset.idx
-    })
-    console.log(this.data.currentTab)
-    // console.log(currentTab) 不能通过名字调用，会出现 ReferenceError: currentTab is not defined
+    publisher: '',
+    date: '',
+    task: {},
+    answerList: []
   },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(options.id)
     db.collection('tasks').where({
-      _openid: app.globalData.userInfo.openid
+      _id: options.id
     }).get().then(res => {
-      console.log(res.data)
+      var util = require('../../../../utils/util.js')
       this.setData({
-        taskList: res.data
+        task: res.data[0],
+        date: util.formatTime(res.data[0].createTime)
+      })
+      db.collection('users').where({
+        _id: res.data[0].publisher
+      }).get().then(res1 => {
+        this.setData({
+          publisher: res1.data[0].nickName
+        })
+      })
+      db.collection('answers').where({
+        taskId: res.data[0]._id
+      }).get().then(res1 => {
+        this.setData({
+          answerList: res1.data
+        })
       })
     })
+
   },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -87,7 +97,9 @@ Page({
     let index = e.currentTarget.dataset.index;
     console.log('id', index)
     wx.navigateTo({
-      url: '/pages/profile/task_history/task_result/task_result?id=' + index
+      url: '/pages/profile/task_history/result_info/result_info?id=' + index
     })
   }
+
+
 })

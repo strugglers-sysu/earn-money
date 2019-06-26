@@ -48,13 +48,14 @@ Page({
     }
     db.collection('tasks').add({
       data: {
+        publisher: app.globalData.userInfo.id,
         title: this.data.title,
         createTime: new Date(),
         description: this.data.description,
         type: this.data.type,
-        total: this.data.num3,
-        remain: this.data.num3,
-        reward: this.data.reward,
+        total: new Number(this.data.num3),
+        remain: new Number(this.data.num3),
+        reward: new Number(this.data.reward),
         questionList: questionList
       }
     })

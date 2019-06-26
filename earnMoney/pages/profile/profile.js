@@ -16,17 +16,18 @@ Page({
     ],
     userType: 'student'
   },
+
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
     this.setData({
       userType: e.detail.value
     })
   },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -97,10 +98,6 @@ Page({
             fail: console.error
           })
         }
-        
-        // wx.navigateTo({
-        //   url: '/pages/profile/pick_userType/pick_userType',
-        // })
       }
       // 老用户，访问数据库，设置本地变量
       else {
@@ -109,6 +106,7 @@ Page({
         }).get().then(res => {
           app.globalData.userInfo.id = res.data[0]._id
           app.globalData.userInfo.type = res.data[0].type
+          app.globalData.userInfo.wallet = res.data[0].wallet
         })
       }
     })

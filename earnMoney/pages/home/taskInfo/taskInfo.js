@@ -1,5 +1,5 @@
 // pages/home/taskInfo/taskInfo.js
-
+var app = getApp()
 const db = wx.cloud.database()
 
 Page({
@@ -9,6 +9,8 @@ Page({
    */
   data: {
     loading: false,
+    disabled: false,
+    buttonContent: '填写问卷',
     publisher: '',
     date: '',
     task: {}
@@ -26,13 +28,24 @@ Page({
         task: res.data[0],
         date: util.formatTime(res.data[0].createTime)
       })
-    }),
-    db.collection('users').where({
-      _openid: this.data.task._openid
-    }).get().then(res => {
-      console.log(res.data)
-      this.setData({
-        publisher: res.data[0].nickName
+      if (res.data[0].publisher == app.globalData.userInfo.id) {
+        this.setData({
+          disabled: true,
+          buttonContent: '该问卷为本人发布，不能填写',
+        })
+      }
+      else if (res.data[0].remain <= 0) {
+        this.setData({
+          disabled: true,
+          buttonContent: '该问卷已填写完毕，不能填写',
+        })
+      }
+      db.collection('users').where({
+        _id: res.data[0].publisher
+      }).get().then(res1 => {
+        this.setData({
+          publisher: res1.data[0].nickName
+        })
       })
     })
   },
