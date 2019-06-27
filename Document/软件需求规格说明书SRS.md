@@ -32,7 +32,7 @@
 - 我们项目团队的另一个重要目标是，在本学期践行面向对象的系统分析与设计方法，体验完整的软件开发流程。
 ## 需求模型
 ### 用例图
-<br>![](pic/zxq-use-case.png)
+<br>![](pic/SRS/zxq-use-case.png)
 <br>**基本用例**：
 - 注册/登录：组织机构和学生都可以作为一个独立的用户，可以进行注册、登录系统。
 - 发布任务：组织机构可以面向学生发布相应兼职作为任务，学生也同样可以发布自己想让其他同学做的任务。
@@ -54,38 +54,38 @@
 
 ### 活动图
 **主场景下商家活动图**
-<br>![](pic/hdt1.jpg)
+<br>![](pic/SRS/hdt1.jpg)
 <br>**主场景下学生活动图**
-<br>![](pic/hdt2(2).jpg)
+<br>![](pic/SRS/hdt2(2).jpg)
 
 ### 领域模型图
-![](pic/DomainModel.png)
+![](pic/SRS/DomainModel.png)
 
 ### 状态模型图
-![](pic/StateModel.jpg)
+![](pic/SRS/StateModel.jpg)
 
 ### 功能模型图
 <br>**学生取消任务**
-<br>![](pic/system_sequence1.png)
+<br>![](pic/SRS/system_sequence1.png)
 <br>**商家取消任务**
-<br>![](pic/system_sequence2.png)
+<br>![](pic/SRS/system_sequence2.png)
 <br>**学生接受任务**
-<br>![](pic/system_sequence3.png)
+<br>![](pic/SRS/system_sequence3.png)
 <br>**商家确认**
-<br>![](pic/system_sequence4.png)
+<br>![](pic/SRS/system_sequence4.png)
 <br>**商家拒绝**
-<br>![](pic/system_sequence5.png)
+<br>![](pic/SRS/system_sequence5.png)
 <br>**商家发布任务**
-<br>![](pic/system_sequence6.png)
+<br>![](pic/SRS/system_sequence6.png)
 <br>**商家修改任务**
-<br>![](pic/system_sequence7.png)
+<br>![](pic/SRS/system_sequence7.png)
 <br>**商家删除任务**
-<br>![](pic/system_sequence8.png)
+<br>![](pic/SRS/system_sequence8.png)
 <br>**学生注册**
-<br>![](pic/system_sequence9.png)
+<br>![](pic/SRS/system_sequence9.png)
 <br>**学生登录**
-<br>![](pic/system_sequence10.png)
+<br>![](pic/SRS/system_sequence10.png)
 <br>**商家注册**
-<br>![](pic/system_sequence11.png)
+<br>![](pic/SRS/system_sequence11.png)
 <br>**商家登录**
-<br>![](pic/system_sequence12.png)
+<br>![](pic/SRS/system_sequence12.png)
