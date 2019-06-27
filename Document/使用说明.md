@@ -40,11 +40,17 @@
 
 - 历史记录
 
-  会记录每一个发布问卷，点击可进入问卷查看详细信息。
+  - 我发布的
+
+  在相应的输入框中填写输入内容，如果闲钱不足（发布问卷需要1个闲钱币），则提示闲钱币不足，如果填充内容不完整，即提示填写完整信息。
 
   ![发布历史](https://github.com/strugglers-sysu/earn-money/blob/master/Document/pic/instructions_for_use/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.png)
 
-  ![历史问卷](https://github.com/strugglers-sysu/earn-money/blob/master/Document/pic/instructions_for_use/%E5%8E%86%E5%8F%B2%E9%97%AE%E5%8D%B7.png)
+  ![历史问卷](https://github.com/strugglers-sysu/earn-money/blob/master/Document/pic/instructions_for_use/%E5%88%A0%E9%99%A4%E8%AE%B0%E5%BD%95.png)
+  
+  - 我做过的
+  
+  ![历史问卷](https://github.com/strugglers-sysu/earn-money/blob/master/Document/pic/instructions_for_use/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B22.png)
 
 #### 发布（问卷发布功能）
 
