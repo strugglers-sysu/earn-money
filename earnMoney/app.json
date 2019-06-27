@@ -14,7 +14,7 @@
     "pages/profile/about/about",
     "pages/publish/publishqa/publishqa",
     "pages/publish/publishqa/qa/qa",
-    "pages/publish/publishta/publishta",
+    "pages/publish/publishtk/publishtk",
     "pages/profile/task_history/task_result/task_result"
   ],
   "window": {
