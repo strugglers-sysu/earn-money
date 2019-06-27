@@ -4,6 +4,8 @@
 
 项目文档网站地址：https://strugglers-sysu.github.io/Dashboard/
 
+实训文档网站地址：https://github.com/strugglers-sysu/earn-money/tree/master/Document
+
 ## 运行
 
 1. 在微信开发工具导入项目
