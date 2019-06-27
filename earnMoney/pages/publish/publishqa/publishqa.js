@@ -15,30 +15,19 @@ Page({
    */
   setBasic: function (e) {
     if (e.detail.value.title
-      && e.detail.value.description
-      && e.detail.value.type
-      && e.detail.value.num1
-      && e.detail.value.num2
-      && e.detail.value.num3
-      && e.detail.value.reward) {
-      var money = e.detail.value.num3 * e.detail.value.reward
-      console.log("所需总金额￥" + money)
-      if (money <= app.globalData.userInfo.wallet) {
-        wx.setStorageSync('ti', e.detail.value.title);
-        wx.setStorageSync('d', e.detail.value.description);
-        wx.setStorageSync('ty', e.detail.value.type);
-        wx.setStorageSync('n1', e.detail.value.num1);
-        wx.setStorageSync('n2', e.detail.value.num2);
-        wx.setStorageSync('n3', e.detail.value.num3);
-        wx.setStorageSync('r', e.detail.value.reward);
-        wx.navigateTo({
-          url: '/pages/publish/publishqa/qa/qa',
-        })
-      }
-      else {
+    && e.detail.value.description
+    && e.detail.value.type
+    && e.detail.value.num1
+    && e.detail.value.num2
+    && e.detail.value.num3
+    && e.detail.value.reward) {
+      if (!parseInt(e.detail.value.num1) 
+      || !parseInt(e.detail.value.num2)
+      || !parseInt(e.detail.value.num3)
+      || !parseInt(e.detail.value.reward)) {
         wx.showModal({
           title: '提示',
-          content: '你的“闲钱币”不足，请充值',
+          content: '请在数字项填写数字',
           success(res) {
             if (res.confirm) {
               console.log('用户点击确定')
@@ -50,6 +39,38 @@ Page({
             }
           }
         })
+      }
+      else {
+        var money = e.detail.value.num3 * e.detail.value.reward
+        console.log("所需总金额￥" + money)
+        if (money <= app.globalData.userInfo.wallet) {
+          wx.setStorageSync('ti', e.detail.value.title);
+          wx.setStorageSync('d', e.detail.value.description);
+          wx.setStorageSync('ty', e.detail.value.type);
+          wx.setStorageSync('n1', e.detail.value.num1);
+          wx.setStorageSync('n2', e.detail.value.num2);
+          wx.setStorageSync('n3', e.detail.value.num3);
+          wx.setStorageSync('r', e.detail.value.reward);
+          wx.navigateTo({
+            url: '/pages/publish/publishqa/qa/qa',
+          })
+        }
+        else {
+          wx.showModal({
+            title: '提示',
+            content: '你的“闲钱币”不足，请充值',
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+                wx.navigateBack({
+                  delta: 1
+                })
+              }
+            }
+          })
+        }
       }
     }
     else {
