@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/profile/profile",
     "pages/home/home",
     "pages/publish/publish",
     "pages/profile/task_history/task_history",
-    "pages/profile/profile",
     "pages/profile/pay/pay",
     "pages/profile/money/money",
     "pages/home/questionnaire/questionnaire",

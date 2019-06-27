@@ -88,20 +88,29 @@ Page({
       })
       .then(console.log)
       .catch(console.error)
-      db.collection('tasks').doc(this.data.task._id).update({
-        // data 传入需要局部更新的数据
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'reduceremain',
+        // 传给云函数的参数
         data: {
-          remain: this.data.task.remain - 1
-        }
+          taskId: this.data.task._id,
+          remain: this.data.task.remain - 1,
+        },
       })
-      .then(console.log)
+      .then(res => {
+        console.log('调用成功')
+        console.log(res.result) // 3
+      })
       .catch(console.error)
+      
       db.collection('answers').add({
         data: {
           nickName: res2.data[0].nickName,
           whoFill: app.globalData.userInfo.id,
           publisher: this.data.task.publisher,
           taskId: this.data.task._id,
+          taskTitle: this.data.task.title,
+          taskReward: this.data.task.reward,
           createTime: new Date(),
           answer: e.detail.value
         }

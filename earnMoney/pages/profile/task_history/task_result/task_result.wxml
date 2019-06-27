@@ -16,6 +16,10 @@
   <view style='color: #000000'>{{task.description}}</view>
 </view>
 
+<view class="menubar">
+  <button class='menubar__btn' type="warn" bindtap="deleteQa">删除问卷</button>
+</view>
+
 <view class="showLabel">问卷题目</view>
 <view wx:for="{{task.questionList}}" wx:key='id' class="showPanel smallWord" hover-class="myui--active">
   <view class='question'>

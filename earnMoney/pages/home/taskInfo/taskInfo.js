@@ -40,6 +40,20 @@ Page({
           buttonContent: '该问卷已填写完毕，不能填写',
         })
       }
+      else {
+        db.collection('answers').where({
+          taskId: res.data[0]._id,
+          whoFill: app.globalData.userInfo.id
+        }).count().then(res1 => {
+          if (res1.total > 0) {
+            this.setData({
+              disabled: true,
+              buttonContent: '您已填写该问卷，不能重复填写',
+            })
+          }
+        })
+      }
+
       db.collection('users').where({
         _id: res.data[0].publisher
       }).get().then(res1 => {

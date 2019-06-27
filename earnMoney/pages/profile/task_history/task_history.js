@@ -12,8 +12,10 @@ Page({
     ],
     top_navigation_bar_content: ['我发布的', '我做过的'],
     currentTab: 0,
-    taskList: []
+    taskList: [],
+    answerList: []
   },
+
   topnavbarTap: function(e) {
     this.setData({
       'currentTab': e.currentTarget.dataset.idx
@@ -31,6 +33,14 @@ Page({
       console.log(res.data)
       this.setData({
         taskList: res.data
+      })
+    })
+    db.collection('answers').where({
+      whoFill: app.globalData.userInfo.id
+    }).get().then(res => {
+      console.log(res.data)
+      this.setData({
+        answerList: res.data
       })
     })
   },

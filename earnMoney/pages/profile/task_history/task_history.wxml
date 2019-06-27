@@ -3,12 +3,22 @@
     <text wx:for="{{top_navigation_bar_content}}" wx:key="{{index}}" bindtap="topnavbarTap" data-idx="{{index}}" 
       class="top_navigation_bar_content {{currentTab == index ? 'active' : ''}}">{{item}}</text>
   </view>
-  <scroll-view class="fill_body_scroll" scroll-y style="height: 100%">
+  <scroll-view wx:if='{{currentTab == 0}}' class="fill_body_scroll" scroll-y style="height: 100%">
     <view wx:if='{{taskList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row; background-color: #F0EFF5;">
         <view wx:for='{{taskList}}' wx:key="index" 
           class="weui-cell taskListShowUnit" hover-class="myui-active" bindtap='naviToInfo' data-index='{{item._id}}'>
           <view>
             {{item.title}}
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+  <scroll-view wx:if='{{currentTab == 1}}'  class="fill_body_scroll" scroll-y style="height: 100%">
+    <view wx:if='{{answerList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row; background-color: #F0EFF5;">
+        <view wx:for='{{answerList}}' wx:key="index" 
+          class="weui-cell taskListShowUnit" hover-class="myui-active" data-index='{{item._id}}'>
+          <view>
+            填写了《{{item.taskTitle}}》，赚取 {{item.taskReward}} 个闲钱币
           </view>
         </view>
     </view>

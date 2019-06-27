@@ -85,5 +85,23 @@ Page({
     wx.navigateTo({
       url: '/pages/profile/task_history/result_info/result_info?id=' + index
     })
+  },
+
+  deleteQa: function () {
+    db.collection('tasks').doc(this.data.task._id).remove()
+      .then(
+        wx.showToast({ // 显示Toast
+          title: '删除成功',
+          icon: 'success',
+          duration: 10000,
+          mask: true,
+          success(res) {
+            wx.navigateBack({
+              delta: 2
+            })
+          }
+        }) 
+      )
+      .catch(console.error)
   }
 })
