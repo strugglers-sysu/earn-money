@@ -14,11 +14,8 @@
     "pages/profile/about/about",
     "pages/publish/publishqa/publishqa",
     "pages/publish/publishqa/qa/qa",
-<<<<<<< HEAD
-    "pages/publish/publishtk/publishtk"
-=======
+    "pages/publish/publishtk/publishtk",
     "pages/profile/task_history/task_result/task_result"
->>>>>>> 6b683701cb941977ad10c6113f2741d66cd3125e
   ],
   "window": {
     "backgroundTextStyle": "light",
