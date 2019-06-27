@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* earnMoney/pages/publish/publishqa/publishqa.wxss */
 .empty_container {
   height: 100%;
@@ -119,4 +120,127 @@ view{
 }
 .weui-cells:after{
   bottom:0;border-bottom:1rpx solid white
+=======
+/* earnMoney/pages/publish/publishqa/publishqa.wxss */
+.empty_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+}
+page {/**page可以在调试器中wxml中看见*/
+  background: #F7F7F7
+}
+.common_title{
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  /*margin-top: 20rpx;*/
+  background-color: #FFF;
+}
+.common_font{
+  font-size: 36rpx;
+}
+.common_label{
+  text-align: left;
+  font-size: 38rpx;
+  margin: 40rpx 50rpx;
+}
+/**设置通用表单*/
+.common_input{
+  width: 630rpx;
+  height: 110rpx;
+  background: #FFF;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  padding-left:30rpx;
+}
+
+.deploy{
+  height:70rpx;
+  line-height: 70rpx;
+  float: right;
+  padding-top:10rpx;
+  margin-right: 20rpx;
+  color: rgb(0, 88, 255);
+}
+.deploy_text{
+  height:70rpx;
+  line-height: 70rpx;
+  font-size: 38rpx;
+  /* top: 30rpx; */
+
+}
+.deploy_icon{
+  width: 48rpx;
+  height:48rpx;
+  line-height:48rpx;
+  padding-top:10rpx;
+  margin-right: 20rpx;
+}
+.empty_font{
+  position: absolute;
+  left:340rpx;
+}
+.empty_title{
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+  /*margin-top: 20rpx;*/
+  background-color: #FFF;
+  
+}
+.empty_container{
+  display: flex;
+  flex-direction: column;
+  position: relative
+}
+.title{
+  height: 120rpx;
+  padding-top: 25rpx;
+}
+
+/* iconfont小图标 */
+.plus_ico{
+  width: 96rpx;
+  height:96rpx;
+}
+
+.thisbtn{
+  height: 50px;
+  width: 200px;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  background-image:linear-gradient(to right,#3CC51F,#3CC51F);
+  color: white;
+  border-radius:4px;
+  box-shadow: 0px 3px 5px gary;
+}
+
+view{
+    font-size: 36rpx;
+    font-family: '微软雅黑';
+}
+ 
+.weui-cells:before{
+  top:0;
+  border-top:1rpx solid white;
+  }
+.weui-cell{
+  line-height: 3.5rem;
+}
+.weui-cells:after{
+  bottom:0;border-bottom:1rpx solid white
+>>>>>>> 6b683701cb941977ad10c6113f2741d66cd3125e
 }

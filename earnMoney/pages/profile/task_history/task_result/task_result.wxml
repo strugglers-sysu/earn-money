@@ -1,0 +1,52 @@
+<!--earnMoney/pages/profile/task_history/task_result/task_result.wxml-->
+
+<view class="showPanel smallWord" hover-class="myui--active">
+  <view class='showPanelTitle'>{{task.title}}</view>
+  <view>ID：{{task._id}}</view>
+  <view>发布人：{{publisher}}</view>
+  <view>发布时间：<text style='color: #00EE00;'>{{date}}</text></view>
+  <!-- <view>截止时间：<text style='color: #FF0000;'>{{task.endtime}}</text></view> -->
+  <view>剩余/总数：<text>{{task.remain}}</text>/<text>{{task.total}}</text></view>
+  <view>问卷长度：{{task.questionList.length}}</view>
+  <view>报酬：<text style='color: #0000FF;'>{{task.reward}}</text></view>
+</view>
+
+<view class="showLabel">问卷简介</view>
+<view class="showPanel smallWord" hover-class="myui--active">
+  <view style='color: #000000'>{{task.description}}</view>
+</view>
+
+<view class="showLabel">问卷题目</view>
+<view wx:for="{{task.questionList}}" wx:key='id' class="showPanel smallWord" hover-class="myui--active">
+  <view class='question'>
+    题目{{item.id}}.{{item.question}}
+  </view>
+  <view class='answer' wx:if="{{item.type == 0}}" style="margin-left:20px;">
+    <view>0. {{item.options[0]}}</view>
+    <view>1. {{item.options[1]}}</view>
+    <view>2. {{item.options[2]}}</view>
+    <view>3. {{item.options[3]}}</view>
+  </view>
+</view>
+
+<view class="showLabel">问卷填写情况</view>
+<view wx:if='{{answerList.length}}' class='weui-cells weui-cells_after-title' style="flex-direction:row; background-color: #F0EFF5;">
+    <view wx:for='{{answerList}}' wx:key="index" 
+      class="showPanel smallWord" hover-class="myui--active" data-index='{{item._id}}'>
+      <view>
+        填写人{{index+1}}
+      </view>
+      <view>
+        昵称：{{item.nickName}}
+      </view>
+      <view>
+        答案：
+        <view wx:for="{{item.answer}}" style="margin-left:20px;">
+          题目{{index}}：{{item}}
+        </view>
+      </view>
+    </view>
+</view>
+<view wx:else class="showPanel smallWord" hover-class="myui--active">
+  暂无人填写
+</view>

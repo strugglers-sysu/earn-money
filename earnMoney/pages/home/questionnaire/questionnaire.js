@@ -1,5 +1,5 @@
 // pages/home/questionnaire/questionnaire.js
-
+var app = getApp()
 const db = wx.cloud.database()
 
 Page({
@@ -73,81 +73,55 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   submitQuestionnaire: function(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    // e.detail.value.name
-  },
-  checkboxChange: function(e) {
-    // console.log('id', e.detail.id)
-    console.log('id', e.detail.name)
-    var selected = e.detail.value;
-    console.log('selected', selected)
-    // console.log('length', selected.length)
-    // for (var i = 0; i < selected.length; ++i) {
-    //   console.log('index', selected[i])
-    // }
-    // console.log("------------------------------------")
-    
-    // try second
-    if (selected.length > 1) {
-      var optionalAnswers = this.data.task.questionList[2].optionalAnswers;
-      for (var i = 0; i < optionalAnswers.length; ++i) {
-        if (i == selected[selected.length - 1]) {
-          var isChecked = 'task.questionList[2].optionalAnswers[' + i + '].isChecked'
-          this.setData({
-            // 'data.task.questionList[2].optionalAnswers[0].isChecked': false
-            [isChecked]: true
-          })
-        } else {
-          var isChecked = 'task.questionList[2].optionalAnswers[' + i + '].isChecked'
-          this.setData({
-            // 'data.task.questionList[2].optionalAnswers[0].isChecked': false
-            [isChecked]: false
-          })
+    db.collection('users').where({
+      _id: app.globalData.userInfo.id
+    }).get().then(res2 => {
+      app.globalData.userInfo.wallet += this.data.task.reward
+      db.collection('users').doc(app.globalData.userInfo.id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          wallet: app.globalData.userInfo.wallet
         }
-      }
-    }
-
-    // try first
-    // console.log(this.data.task)
-    // if (selected.length >= 1) {
-    //   console.log('first', this.data.task.questionList[2].optionalAnswers)
-    //   var optionalAnswers = this.data.task.questionList[2].optionalAnswers;
-    //   for (var i = 0; i < optionalAnswers.length; ++i) {
-    //     if (i == selected[selected.length - 1]) {
-    //       optionalAnswers[i].isChecked = true;
-    //     } else {
-    //       optionalAnswers[i].isChecked = false;
-    //     }
-    //   }
-    //   this.setData({
-    //     'data.task.questionList[2].optionalAnswers': optionalAnswers
-    //   })
-    //   console.log('second', this.data.task.questionList[2].optionalAnswers)
-    // }
-
-    // 一个奇淫的技巧
-    // var isChecked = 'task.questionList[2].optionalAnswers[' + selected[0] + '].isChecked'
-    // this.setData({
-    //   // 'data.task.questionList[2].optionalAnswers[0].isChecked': false
-    //   [isChecked]: false
-    // })
-   
-  //   console.log('isChecked', this.data.task.questionList[1].optionalAnswers[0].isChecked)
-  //   var questionList = this.data.task.questionList
-  //   console.log()
-  //   if(selected.length == 1) {
-  //     for (var i = 0; i < questionList.length; ++i) {
-  //       if (questionList[i].type == 1) {
-  //         for (var k = 0; k < questionList[i].optionalAnswers.length; ++k) {
-  //           if (questionList[i].optionalAnswers[k].isChecked == true && k != selected[0]) {
-  //             this.setData({
-  //               'task.questionList[i].optionalAnswers[k].isChecked': false
-  //             })
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
+      })
+      .then(console.log)
+      .catch(console.error)
+      db.collection('tasks').doc(this.data.task._id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          remain: this.data.task.remain - 1
+        }
+      })
+      .then(console.log)
+      .catch(console.error)
+      db.collection('answers').add({
+        data: {
+          nickName: res2.data[0].nickName,
+          whoFill: app.globalData.userInfo.id,
+          publisher: this.data.task.publisher,
+          taskId: this.data.task._id,
+          createTime: new Date(),
+          answer: e.detail.value
+        }
+      })
+      .then(res => {
+        console.log(res)
+        // 显示Toast并返回首页
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 10000,
+          mask: true,
+          success(res) {
+            wx.switchTab({
+              url: '/pages/home/home',
+            })
+          }
+        })
+      })
+      .catch(console.error)
+    })
   }
 })

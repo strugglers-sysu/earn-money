@@ -1,13 +1,11 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/publish/publish",
     "pages/profile/task_history/task_history",
-    "pages/index/index",
-    "pages/home/home",
     "pages/profile/profile",
     "pages/profile/pay/pay",
     "pages/profile/money/money",
-    "pages/profile/pick_userType/pick_userType",
     "pages/home/questionnaire/questionnaire",
     "pages/home/taskInfo/taskInfo",
     "pages/logs/logs",
@@ -16,7 +14,11 @@
     "pages/profile/about/about",
     "pages/publish/publishqa/publishqa",
     "pages/publish/publishqa/qa/qa",
+<<<<<<< HEAD
     "pages/publish/publishtk/publishtk"
+=======
+    "pages/profile/task_history/task_result/task_result"
+>>>>>>> 6b683701cb941977ad10c6113f2741d66cd3125e
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +36,7 @@
         "selectedColor": "#09BB07"
       },
       {
-        "pagePath": "pages/publish/publish",
+        "pagePath": "pages/publish/publishqa/publishqa",
         "text": "发布",
         "color": "#ddd",
         "selectedColor": "#09BB07",

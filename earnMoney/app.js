@@ -16,25 +16,24 @@ App({
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
         this.globalData.userInfo.openid = res.result.openid
+        wx.getSetting({
+          success: res1 => {
+            if (res1.authSetting['scope.userInfo']) {
+              // 设置用户id, type, wallet
+              const db = wx.cloud.database()
+              db.collection('users').where({
+                _openid: res.result.openid
+              }).get().then(res2 => {
+                this.globalData.userInfo.id = res2.data[0]._id
+                this.globalData.userInfo.type = res2.data[0].type
+                this.globalData.userInfo.wallet = res2.data[0].wallet
+              })
+            }
+          }
+        })
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
-      }
-    })
-
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 设置用户id和type
-          const db = wx.cloud.database()
-          db.collection('users').where({
-            _openid: this.globalData.userInfo.openid
-          }).get().then(res => {
-            this.globalData.userInfo.id = res.data[0]._id
-            this.globalData.userInfo.type = res.data[0].type
-            this.globalData.userInfo.wallet = res.data[0].wallet
-          })
-        }
       }
     })
   },
@@ -43,7 +42,7 @@ App({
       id: '',
       openid: '',
       type: '',
-      wallet: ''
+      wallet: 0
     }
   }
 })
