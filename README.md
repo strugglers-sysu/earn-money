@@ -9,5 +9,5 @@
 ## 运行
 
 1. 在微信开发工具导入项目
-2. 上传并部署 cloudfunctions 中的 login 云函数
-3. 在云开发的数据库中新建 `tasks` 和 `users` 两个集合
+2. 上传并部署 cloudfunctions 中的 login 和 reduceremain 云函数
+3. 在云开发的数据库中新建 `tasks`, `users` 和 `answers` 三个集合
